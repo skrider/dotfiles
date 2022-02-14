@@ -1,6 +1,7 @@
 const {symlink_dir_contents} = require("./utils");
 const {join} = require("path");
+const os = require("os");
 
-const HOME = process.cwd();
+const HOME = os.homedir();
 
 symlink_dir_contents(join(process.cwd(), "windows-home"), HOME);
