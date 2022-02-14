@@ -1,0 +1,44 @@
+* Dotfiles Repo
+** Windows
+
+*** Init
+
+#+BEGIN_SRC powershell
+node ./init-windows.js
+#+END_SRC
+
+*** Tools
+- ngrok - tunnel to localhost on local machine
+
+** Linux
+
+*** Init
+
+#+BEGIN_SRC shell
+node ./init-windows.js
+#+END_SRC
+
+*** Tools
+- ripgrep
+- TeX Live
+- ImageMagick
+- Wakatime (time tracking)
+- emacs
+  - Doom
+  - Spacemacs
+  - Chemacs2 (switcher)
+- vim
+  
+** Scripts
+Found in the ./bin folder and inside a specific program, these are useful scripts meant to accomplish specific functions.
+
+*** AHK
+AutoHotKey, used for creating custom shortcuts, very powerful
+
+* Architecture
+
+Sync dotfiles to this directory by creating symbolic links in the local user's home directory. Uses the synchronous node fs functions. Ensure node is at least version 16.
+
+* Troubleshooting
+
+- Sometimes have trouble with some symlinks not creating. If this is the case, manually delete dotfiles and then rerun init.
