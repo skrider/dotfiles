@@ -1,0 +1,5 @@
+* Unplugged Files
+
+- startup.cmd goes in
+  C:\Users\steph\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\startup.cmd
+- profile.psl goes in

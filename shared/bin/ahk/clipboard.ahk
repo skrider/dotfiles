@@ -1,0 +1,3 @@
+^!v::
+SendRaw %Clipboard%
+return
