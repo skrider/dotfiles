@@ -4,4 +4,5 @@ const os = require("os");
 
 const HOME = os.homedir();
 
-symlink_dir_contents(join(process.cwd(), "ubuntu-home"), HOME);
+symlink_dir_contents(join(process.cwd(), "shared"), HOME);
+symlink_dir_contents(join(process.cwd(), "ubuntu"), HOME);

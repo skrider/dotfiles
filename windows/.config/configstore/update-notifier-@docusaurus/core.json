@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1631637937770,
+	"update": {
+		"latest": "2.0.0-beta.6",
+		"current": "2.0.0-beta.4",
+		"type": "prerelease",
+		"name": "@docusaurus/core"
+	}
+}
