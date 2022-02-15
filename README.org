@@ -9,6 +9,11 @@ node ./init-windows.js
 
 *** Tools
 - ngrok - tunnel to localhost on local machine
+- mdloader - configure massdrop keyboards. Usage:
+#+BEGIN_SRC powershell
+./mdloader --first --download FILE_NAME --restart
+#+END_SRC
+  - After flashing the firmware, press the reset button under keyboard for changes to take effect
 
 ** Linux
 

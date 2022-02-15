@@ -584,16 +584,17 @@ before packages are loaded."
 
   "Keybindings"
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "^") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "_") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-dollar)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-pbb)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-pbb)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-pbb)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-pbb)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-pbb)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "^") 'cdlatex-sub-superscript)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "_") 'cdlatex-sub-superscript)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-command-help)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-environment)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-item)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "TAB") 'cdlatex-tab)
 )
 
 
