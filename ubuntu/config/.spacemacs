@@ -574,6 +574,7 @@ dump."
   (evil-force-normal-state)
   (setq org-format-latex-options '(:scale 2.5 :foreground "#FFFFFF"))
   (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
+  (add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
   (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -582,40 +583,17 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   "Keybindings"
-  (spacemacs/set-leader-keys-for-minor-mode 'cdlatex-mode ",")
-
- (kbd "$"  'cdlatex-dollar)
- (kbd "(" 'cdlatex-pbb)
- (kbd "{"  'cdlatex-pbb)
- (kbd "[" 'cdlatex-pbb)
- (kbd "|"  'cdlatex-pbb)
- (kbd "<" 'cdlatex-pbb)
- (kbd "^"  'cdlatex-sub-superscr)
- (kbd "_" 'cdlatex-sub-superscr)
- (kbd "TAB"  'cdlatex-tab)
- (kbd "C-c ?" 'cdlatex-command-help)
- (kbd "C-c {"  'cdlatex-environment)
- (kbd "C-c -" 'cdlatex-item)
- (kbd "`"  'cdlatex-math-symbol)
- (kbd "'" 'cdlatex-math-modify)
-
- (add-hook 'cdlatex-mode-hook
-   (lambda ()
-     (define-key evil-insert-state-local-map
-       (kbd "$" 'cdlatex-dollar)
-       (kbd "(" 'cdlatex-pbb)
-       (kbd "{" 'cdlatex-pbb)
-       (kbd "[" 'cdlatex-pbb)
-       (kbd "|" 'cdlatex-pbb)
-       (kbd "<" 'cdlatex-pbb)
-       (kbd "^" 'cdlatex-sub-superscr)
-       (kbd "_" 'cdlatex-sub-superscr)
-       (kbd "TAB" 'cdlatex-tab)
-       (kbd "C-c ?" 'cdlatex-command-help)
-       (kbd "C-c {" 'cdlatex-environment)
-       (kbd "C-c -" 'cdlatex-item)
-       (kbd "`" 'cdlatex-math-symbol)
-       (kbd "'" 'cdlatex-math-modify))))
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "^") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "_") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-dollar)
+  (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-dollar)
 )
 
 
