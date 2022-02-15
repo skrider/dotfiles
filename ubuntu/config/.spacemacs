@@ -573,9 +573,13 @@ dump."
   (setq wakatime-api-key "c8ab35fa-e837-4eaf-9551-9d2fcd2de1eb")
   (evil-force-normal-state)
   (setq org-format-latex-options '(:scale 2.5 :foreground "#FFFFFF"))
+  (setq org-latex-create-formula-image-program 'dvipng)
   (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
   (add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
+  (add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
   (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
+
+  (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file . "temp.png")))
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
