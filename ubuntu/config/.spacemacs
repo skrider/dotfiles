@@ -33,34 +33,45 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers '(yaml
                                        windows-scripts
-     autohotkey
-     vimscript
-     javascript
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
-     emacs-lisp
-     pdf
-     git
-     helm
-     lsp
-     markdown
-     multiple-cursors
-     org
-     latex
-     (wakatime :variables
-               wakatime-cli-path "/home/skrider/.local/bin/wakatime")
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
-     version-control
-     treemacs)
+                                       autohotkey
+                                       vimscript
+                                       javascript
+                                       ;; ----------------------------------------------------------------
+                                       ;; Example of useful layers you may want to use right away.
+                                       ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+                                       ;; `M-m f e R' (Emacs style) to install them.
+                                       ;; ----------------------------------------------------------------
+                                       ;; auto-completion
+                                       ;; better-defaults
+                                       emacs-lisp
+                                       pdf
+                                       git
+                                       helm
+                                       lsp
+                                       markdown
+                                       multiple-cursors
+                                       org
+                                       latex
+                                       (wakatime :variables
+                                                 wakatime-cli-path "/home/skrider/.local/bin/wakatime")
+                                       (shell :variables
+                                              shell-default-height 30
+                                              shell-default-position 'bottom)
+                                       spell-checking
+                                       syntax-checking
+                                       (auto-completion :variables
+                                                        auto-completion-return-key-behavior 'complete
+                                                        auto-completion-tab-key-behavior 'cycle
+                                                        auto-completion-complete-with-key-sequence "jk"
+                                                        auto-completion-complete-with-key-sequence-delay 0.2
+                                                        auto-completion-minimum-prefix-length 2
+                                                        auto-completion-idle-delay 0.2
+                                                        auto-completion-enable-snippets-in-popup t
+                                                        auto-completion-enable-help-tooltip t
+                                                        auto-completion-use-company-box nil
+                                                        auto-completion-enable-sort-by-usage t)
+                                       version-control
+                                       treemacs)
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -71,7 +82,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(cdlatex)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -442,7 +453,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, start an Emacs server if one is not already running.
    ;; (default nil)
-   dotspacemacs-enable-server nil
+   dotspacemacs-enable-server t
 
    ;; Set the emacs server socket location.
    ;; If nil, uses whatever the Emacs default is, otherwise a directory path
@@ -562,6 +573,8 @@ dump."
   (setq wakatime-api-key "c8ab35fa-e837-4eaf-9551-9d2fcd2de1eb")
   (evil-force-normal-state)
   (setq org-format-latex-options '(:scale 2.5 :foreground "#FFFFFF"))
+  (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
+  (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
@@ -612,7 +625,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-fontify-done-headline nil)
  '(org-fontify-todo-headline nil)
  '(package-selected-packages
-   '(yaml-mode powershell bmx-mode ahk-mode web-beautify tern prettier-js npm-mode nodejs-repl livid-mode skewer-mode js2-refactor yasnippet multiple-cursors js2-mode js-doc import-js grizzl impatient-mode simple-httpd helm-gtags ggtags dap-mode lsp-treemacs bui lsp-mode counsel-gtags counsel swiper ivy company add-node-modules-path ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay sublime-themes string-inflection string-edit spaceline-all-the-icons smeargle restart-emacs request rainbow-delimiters quickrun popwin planet-theme pcre2el password-generator paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless multi-line mmm-mode markdown-toc macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-git-grep helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clean-aindent-mode centered-cursor-mode browse-at-remote auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line))
+   '(cdlatex yaml-mode powershell bmx-mode ahk-mode web-beautify tern prettier-js npm-mode nodejs-repl livid-mode skewer-mode js2-refactor yasnippet multiple-cursors js2-mode js-doc import-js grizzl impatient-mode simple-httpd helm-gtags ggtags dap-mode lsp-treemacs bui lsp-mode counsel-gtags counsel swiper ivy company add-node-modules-path ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay sublime-themes string-inflection string-edit spaceline-all-the-icons smeargle restart-emacs request rainbow-delimiters quickrun popwin planet-theme pcre2el password-generator paradox overseer orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless multi-line mmm-mode markdown-toc macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-git-grep helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clean-aindent-mode centered-cursor-mode browse-at-remote auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
