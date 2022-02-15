@@ -580,6 +580,42 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  "Keybindings"
+  (spacemacs/set-leader-keys-for-minor-mode 'cdlatex-mode ",")
+
+ (kbd "$"  'cdlatex-dollar)
+ (kbd "(" 'cdlatex-pbb)
+ (kbd "{"  'cdlatex-pbb)
+ (kbd "[" 'cdlatex-pbb)
+ (kbd "|"  'cdlatex-pbb)
+ (kbd "<" 'cdlatex-pbb)
+ (kbd "^"  'cdlatex-sub-superscr)
+ (kbd "_" 'cdlatex-sub-superscr)
+ (kbd "TAB"  'cdlatex-tab)
+ (kbd "C-c ?" 'cdlatex-command-help)
+ (kbd "C-c {"  'cdlatex-environment)
+ (kbd "C-c -" 'cdlatex-item)
+ (kbd "`"  'cdlatex-math-symbol)
+ (kbd "'" 'cdlatex-math-modify)
+
+ (add-hook 'cdlatex-mode-hook
+   (lambda ()
+     (define-key evil-insert-state-local-map
+       (kbd "$" 'cdlatex-dollar)
+       (kbd "(" 'cdlatex-pbb)
+       (kbd "{" 'cdlatex-pbb)
+       (kbd "[" 'cdlatex-pbb)
+       (kbd "|" 'cdlatex-pbb)
+       (kbd "<" 'cdlatex-pbb)
+       (kbd "^" 'cdlatex-sub-superscr)
+       (kbd "_" 'cdlatex-sub-superscr)
+       (kbd "TAB" 'cdlatex-tab)
+       (kbd "C-c ?" 'cdlatex-command-help)
+       (kbd "C-c {" 'cdlatex-environment)
+       (kbd "C-c -" 'cdlatex-item)
+       (kbd "`" 'cdlatex-math-symbol)
+       (kbd "'" 'cdlatex-math-modify))))
 )
 
 
