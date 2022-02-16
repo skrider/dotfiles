@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Stephen Krider"
+      user-mail-address "skrider@berkeley.edu")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -35,7 +35,41 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(toggle-frame-fullscreen)
 
+(add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
+(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
+(add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
+(add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
+
+"Keybindings"
+"CDLaTex"
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-pbb)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-pbb)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-pbb)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-pbb)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-pbb)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-command-help)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-environment)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-item)
+(evil-define-key 'insert 'org-cdlatex-mode (kbd "TAB") 'cdlatex-tab)
+
+  "Hippie Expand"
+(define-key evil-insert-state-map (kbd "C-SPC") 'hippie-expand)
+
+(setq org-latex-create-formula-image-program 'dvipng)
+(setq org-highlight-latex-and-related '(latex))
+
+(add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
+(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
+(add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
+(add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
+(add-hook 'org-mode-hook (lambda () (company-mode -1)))
+
+
+
+(setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one

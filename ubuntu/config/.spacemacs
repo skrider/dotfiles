@@ -60,16 +60,16 @@ This function should only modify configuration layer settings."
                                        spell-checking
                                        syntax-checking
                                        (auto-completion :variables
-                                                        auto-completion-return-key-behavior 'complete
-                                                        auto-completion-tab-key-behavior 'cycle
+                                                        auto-completion-return-key-behavior 'cycle
+                                                        auto-completion-tab-key-behavior 'complete
                                                         auto-completion-complete-with-key-sequence "jk"
-                                                        auto-completion-complete-with-key-sequence-delay 0.2
+                                                        auto-completion-complete-with-key-sequence-delay 0.5
                                                         auto-completion-minimum-prefix-length 2
-                                                        auto-completion-idle-delay 0.2
+                                                        auto-completion-idle-delay 0.1
                                                         auto-completion-enable-snippets-in-popup t
                                                         auto-completion-enable-help-tooltip t
                                                         auto-completion-use-company-box nil
-                                                        auto-completion-enable-sort-by-usage t)
+                                                        auto-completion-enable-sort-by-usage nil)
                                        version-control
                                        treemacs)
 
@@ -569,15 +569,18 @@ dump."
 
 
 (defun dotspacemacs/user-config ()
-  (setq projectile-require-project-root nil)
   (setq wakatime-api-key "c8ab35fa-e837-4eaf-9551-9d2fcd2de1eb")
+  (setq projectile-require-project-root nil)
   (evil-force-normal-state)
-  (setq org-format-latex-options '(:scale 2.5 :foreground "#FFFFFF"))
+  (setq org-format-latex-options '(:scale 1.75 :foreground "#FFFFFF"))
   (setq org-latex-create-formula-image-program 'dvipng)
+
+  (spacemacs|disable-company org-mode)
+
+  (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
   (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
   (add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
   (add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
-  (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
 
   (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file . "temp.png")))
   "Configuration for user code:
@@ -587,18 +590,20 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   "Keybindings"
+  "CDLaTex"
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-pbb)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-pbb)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-pbb)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-pbb)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-pbb)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "^") 'cdlatex-sub-superscript)
-  (evil-define-key 'insert 'org-cdlatex-mode (kbd "_") 'cdlatex-sub-superscript)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-command-help)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-environment)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-item)
   (evil-define-key 'insert 'org-cdlatex-mode (kbd "TAB") 'cdlatex-tab)
+
+  "Hippie Expand"
+  (define-key evil-insert-state-map (kbd "C-SPC") 'hippie-expand)
 )
 
 
