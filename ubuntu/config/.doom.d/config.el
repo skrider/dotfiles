@@ -44,16 +44,26 @@
 
 "Keybindings"
 "CDLaTex"
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-pbb)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-pbb)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-pbb)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-pbb)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-pbb)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-command-help)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-environment)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-item)
-(evil-define-key 'insert 'org-cdlatex-mode (kbd "TAB") 'cdlatex-tab)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "$") 'cdlatex-dollar)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "(") 'cdlatex-pbb)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "{") 'cdlatex-pbb)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "[") 'cdlatex-pbb)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "|") 'cdlatex-pbb)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "<") 'cdlatex-pbb)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c ?") 'cdlatex-command-help)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c {") 'cdlatex-environment)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "C-c -") 'cdlatex-item)
+;; (evil-define-key 'insert 'org-cdlatex-mode (kbd "TAB") 'cdlatex-tab)
+
+(map! :desc "cdlatex" :mode org-mode :i "$" 'cdlatex-dollar)
+(map! :desc "cdlatex" :mode org-mode :i "(" 'cdlatex-pbb)
+(map! :desc "cdlatex" :mode org-mode :i "{" 'cdlatex-pbb)
+(map! :desc "cdlatex" :mode org-mode :i "[" 'cdlatex-pbb)
+(map! :desc "cdlatex" :mode org-mode :i "|" 'cdlatex-pbb)
+(map! :desc "cdlatex" :mode org-mode :i "<" 'cdlatex-pbb)
+(map! :desc "cdlatex" :mode org-mode :i "C-c ?" 'cdlatex-command-help)
+(map! :desc "cdlatex" :mode org-mode :i "C-c {" 'cdlatex-environment)
+(map! :desc "cdlatex" :mode org-mode :i "C-c -" 'cdlatex-item)
 
   "Hippie Expand"
 (define-key evil-insert-state-map (kbd "C-SPC") 'hippie-expand)
