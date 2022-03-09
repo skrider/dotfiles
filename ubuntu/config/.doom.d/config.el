@@ -36,7 +36,7 @@
 (setq display-line-numbers-type t)
 
 (toggle-frame-fullscreen)
-
+(evil-force-normal-state)
 (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
 (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
 (add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
@@ -54,11 +54,14 @@
 (map! :desc "cdlatex" :mode org-mode :i "C-c {" 'cdlatex-environment)
 (map! :desc "cdlatex" :mode org-mode :i "C-c -" 'cdlatex-item)
 (map! :desc "cdlatex" :mode org-mode :i "<tab>" 'cdlatex-tab)
-
+(setq cdlatex-math-modify-prefix "'")
 (map! :desc "yas expand" :mode org-mode :i "C-SPC" 'yas-expand)
+;;(map! :desc "latex preview" :mode org-mode "F13" 'org-latex-preview)
 
 (setq org-latex-create-formula-image-program 'dvipng)
 (setq org-highlight-latex-and-related '(latex))
+
+;; (setq cdlatex-tab-hook (lambda () (call-interactively `yas-expand)))
 
 (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
 (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
@@ -66,7 +69,14 @@
 (add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
 (add-hook 'org-mode-hook (lambda () (company-mode -1)))
 
-
+;; (setq cdlatex-math-symbol-alist
+;;       '(
+;;         ( ?v ("^{-1}" "\\vee"))
+;;         ( ?T ("^\\top"))
+;;         ( ?s ("^\\dagger" "\\sigma"))
+;;         ( ?o ("^\\asterisk" "\\omega"))
+;;         ( ?p ("^\\bot" "\\pi"))
+;;         ))
 
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
 ;; Here are some additional functions/macros that could help you configure Doom:

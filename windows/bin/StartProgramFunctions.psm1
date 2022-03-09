@@ -35,6 +35,8 @@ function global:discord() {
   Start-Process @processOptions
 }
 
+Set-Alias -Name vim -Value "C:\Program Files\Git\usr\bin\vim.exe"
+
 function global:Start-Spotify() {
   $processOptions = @{
     FilePath = ($SpotifyLoc)
