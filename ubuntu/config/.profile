@@ -35,3 +35,5 @@ if [ -d "/usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin" ] ; then
 	PATH="/usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin:$PATH"
 fi
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
