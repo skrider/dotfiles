@@ -69,16 +69,12 @@
 (add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
 (add-hook 'org-mode-hook (lambda () (company-mode -1)))
 
-;; (setq cdlatex-math-symbol-alist
-;;       '(
-;;         ( ?v ("^{-1}" "\\vee"))
-;;         ( ?T ("^\\top"))
-;;         ( ?s ("^\\dagger" "\\sigma"))
-;;         ( ?o ("^\\asterisk" "\\omega"))
-;;         ( ?p ("^\\bot" "\\pi"))
-;;         ))
-
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
+
+(map! :desc "paste" :i "C-M-v" (lambda () (interactive)
+                                 (shell-command "powershell.exe -c get-clipboard")
+                                 (insert-buffer "*Shell Command Output*")))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
