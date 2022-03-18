@@ -71,9 +71,14 @@
 
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
 
-(map! :desc "paste" :i "C-M-v" (lambda () (interactive)
+(map! :desc "paste" :g "C-M-v" (lambda () (interactive)
                                  (shell-command "powershell.exe -c get-clipboard")
                                  (insert-buffer "*Shell Command Output*")))
+
+;; (map! :desc "recursive edit" :g "C-r" (lambda () (interactive)
+;;                                         (if (minibufferp)
+;;                                             (recursive-edit)
+;;                                           (evil-redo))))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
