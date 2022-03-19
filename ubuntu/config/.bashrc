@@ -3,10 +3,6 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -63,15 +59,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -84,8 +71,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias doom='emacs --with-profile=doom'
-
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -93,7 +78,7 @@ alias doom='emacs --with-profile=doom'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias psl='powershell.exe'
+alias psl='powershell -nologo'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,5 +103,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-alias clip='clip.exe'
