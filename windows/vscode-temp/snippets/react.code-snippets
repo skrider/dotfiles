@@ -1,0 +1,26 @@
+{
+  "Next Page": {
+    "prefix": "npage",
+    "body": "import { NextPage } from \"next\";\n\nconst Page: NextPage = function ({}) {\n  return <main></main>;\n};\n\nexport default Page;\n"
+  },
+  "Functional Component": {
+    "prefix": "rfc",
+    "body": "import React from \"react\"\n$1\n\ntype ${TM_FILENAME_BASE}Props = {\n  $2\n};\n\nconst ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = ($3) => {\n  return $0\n}\n\nexport default ${TM_FILENAME_BASE}\n"
+  },
+  "Functional Component with no props": {
+    "prefix": "rfcnp",
+    "body": "import React from \"react\"\n$1\n\nconst ${TM_FILENAME_BASE}: React.FC = () => {\n  return $0\n}\n\nexport default ${TM_FILENAME_BASE}\n"
+  },
+  "Function Declaration": {
+    "prefix": "fdec",
+    "body": "const $1 =$2 function ($3)$4 {\n\t$5\n}\n$0"
+  },
+  "Arrow Function Declaration": {
+    "prefix": "adec",
+    "body": "const $1 =$2 ($3)$4 => $0"
+  },
+  "useState Hook": {
+    "prefix": "ustate",
+    "body": "const [$1, set_$1] = useState$2($3)\n$0"
+  }
+}

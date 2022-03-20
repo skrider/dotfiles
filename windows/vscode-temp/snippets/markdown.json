@@ -1,0 +1,164 @@
+{
+  // TEX EQUATIONS
+  "Multiline Align Environment": {
+    "prefix": "ema",
+    "body": ["$", "\\begin{align*}$0", "\\end{align*}", "$"]
+  },
+  "Inline Equation": {
+    "prefix": "e",
+    "body": ["$$1$ $0"]
+  },
+  "Big Equation": {
+    "prefix": "eb",
+    "body": ["$ $0 $"]
+  },
+  "Multiline Equation": {
+    "prefix": "em",
+    "body": ["$\n$0\n$"]
+  },
+
+  // MARKDOWN CONSTRUCTS
+
+  "file link": {
+    "prefix": "fli",
+    "body": "[$1]($2)$0"
+  },
+  "code": {
+    "prefix": "co",
+    "body": "`$1` $0"
+  },
+  "todo": {
+    "prefix": "to",
+    "body": "- [ ] "
+  },
+  "italics": {
+    "prefix": "i",
+    "body": "_$1_ $0"
+  },
+  "bold": {
+    "prefix": "b",
+    "body": "**$1** $0"
+  },
+  "strikethrough": {
+    "prefix": "st",
+    "body": "~~$1~~ $0"
+  },
+  "Header 1": {
+    "prefix": "h1",
+    "body": "# $0"
+  },
+  "Header 2": {
+    "prefix": "h2",
+    "body": "## $0"
+  },
+  "Header 3": {
+    "prefix": "h3",
+    "body": "### $0"
+  },
+  "Header 4": {
+    "prefix": "h4",
+    "body": "#### $0"
+  },
+  "Header 5": {
+    "prefix": "h5",
+    "body": "##### $0"
+  },
+  "Header 6": {
+    "prefix": "h6",
+    "body": "###### $0"
+  },
+
+  // HTML
+
+  "Aside": {
+    "prefix": "asd",
+    "body": [
+      "<div style=\"border-radius: 4px; padding: 14px; background: #FFF8DD; display: flex; flex-direction: row; margin: 15px 0px;\">",
+      "  <div style=\"font-size: 20px; color: gray; margin-right: 14px;\"><b>!</b></div>",
+      "  $1",
+      "</div>",
+      "",
+      "$0"
+    ]
+  },
+  "html bold": {
+    "prefix": "hb",
+    "body": "<b>$1</b>$0"
+  },
+  "html break": {
+    "prefix": ["br", "hbr"],
+    "body": "<br/>"
+  },
+  "html anchor": {
+    "prefix": "ha",
+    "body": "<a href=\"$1\">$2</a>$0"
+  },
+  "html image": {
+    "prefix": "himg",
+    "body": "<img src=\"$1\" $2/>$0"
+  },
+  "unordered list": {
+    "prefix": "hul",
+    "body": "<ul>\n\t$0\n</ul>"
+  },
+  "ordered list": {
+    "prefix": "hol",
+    "body": "<ol>\n\t$0\n</ol>"
+  },
+  "dropdown": {
+    "prefix": ["hdet", ">h"],
+    "body": "<details>\n\t<summary>$1</summary>\n\t$0\n</details>"
+  },
+  "list item": {
+    "prefix": "hli",
+    "body": "<li>$0</li>"
+  },
+  "key": {
+    "prefix": "kbd",
+    "body": "<kbd>$1</kbd>$0"
+  },
+
+  // DENDRON
+
+  "tag": {
+    "prefix": "#",
+    "body": "[[#${1:my-tag}|tag.${1}]]"
+  },
+  "date": {
+    "prefix": "date",
+    "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE"
+  },
+  "time": {
+    "prefix": "time",
+    "body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE"
+  },
+  "Frontmatter": {
+    "prefix": "fm",
+    "body": [
+      "---\nid: \ntitle: Env\ndesc: ''\nupdated: 1618716977302\ncreated: 1618714828415\n---"
+    ]
+  },
+
+  // TABLE
+
+  "table 2": {
+    "prefix": "t2",
+    "body": "|$1|$2|\n$0"
+  },
+  "table 3": {
+    "prefix": "t3",
+    "body": "|$1|$2|$3|\n$0"
+  },
+  "table 4": {
+    "prefix": "t4",
+    "body": "|$1|$2|$3|$4|\n$0"
+  },
+  "table 5": {
+    "prefix": "t5",
+    "body": "|$1|$2|$3|$4|$5|\n$0"
+  },
+  "table 6": {
+    "prefix": "t6",
+    "body": "|$1|$2|$3|$4|$5|$6|\n$0"
+  }
+}
