@@ -37,11 +37,6 @@
 
 (evil-force-normal-state)
 
-(add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
-(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
-(add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
-(add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
-
 ;; Keybindings
 ;; CDLaTex
 (map! :desc "cdlatex" :mode org-mode :i "$" 'cdlatex-dollar)
@@ -64,10 +59,11 @@
 ;; (setq cdlatex-tab-hook (lambda () (call-interactively `yas-expand)))
 
 (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
-(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)
-                           (org-cdlatex-mode)
+(add-hook 'org-mode-hook (lambda ()
+                           (org-toggle-pretty-entities)
+                           ;; (org-cdlatex-mode)
+                           (electric-indent-local-mode -1)
                            (org-display-inline-images)
-                           (electric-indent-mode)
                            (company-mode -1)))
 
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))

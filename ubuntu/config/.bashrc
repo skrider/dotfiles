@@ -78,7 +78,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# custom aliases
 alias psl='powershell -nologo'
+alias edge='microsoft-edge'
+alias py='python3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

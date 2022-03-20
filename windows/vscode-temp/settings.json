@@ -19,10 +19,9 @@
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
-  "workbench.iconTheme": "material-icon-theme",
   "pasteImage.insertPattern": "${imageSyntaxPrefix}.${imageFilePath}${imageSyntaxSuffix}",
   "markdown.preview.scrollEditorWithPreview": false,
-  "markdown-pdf.outputDirectory": "~\\Downloads",
+  "markdown-pdf.outputDirectory": "~/Downloads",
   "latex-workshop.view.pdf.viewer": "tab",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "remote.SSH.remotePlatform": {

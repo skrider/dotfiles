@@ -1,0 +1,6 @@
+{
+  "Snippet": {
+    "prefix": "snpp",
+    "body": "\"$1\": {\n\t\"prefix\": \"$2\",\n\t\"body\": \"$3\"\n},"
+  }
+}
