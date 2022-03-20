@@ -35,15 +35,15 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-(toggle-frame-fullscreen)
 (evil-force-normal-state)
+
 (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
 (add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
 (add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
 (add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
 
-"Keybindings"
-"CDLaTex"
+;; Keybindings
+;; CDLaTex
 (map! :desc "cdlatex" :mode org-mode :i "$" 'cdlatex-dollar)
 (map! :desc "cdlatex" :mode org-mode :i "(" 'cdlatex-pbb)
 (map! :desc "cdlatex" :mode org-mode :i "{" 'cdlatex-pbb)
@@ -64,16 +64,13 @@
 ;; (setq cdlatex-tab-hook (lambda () (call-interactively `yas-expand)))
 
 (add-hook 'LaTeX-mode-hook (lambda () (prettify-symbols-mode)))
-(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)))
-(add-hook 'org-mode-hook (lambda () (org-cdlatex-mode)))
-(add-hook 'org-mode-hook (lambda () (org-display-inline-images)))
-(add-hook 'org-mode-hook (lambda () (company-mode -1)))
+(add-hook 'org-mode-hook (lambda () (org-toggle-pretty-entities)
+                           (org-cdlatex-mode)
+                           (org-display-inline-images)
+                           (electric-indent-mode)
+                           (company-mode -1)))
 
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
-
-(map! :desc "paste" :g "C-M-v" (lambda () (interactive)
-                                 (shell-command "powershell.exe -c get-clipboard")
-                                 (insert-buffer "*Shell Command Output*")))
 
 ;; (map! :desc "recursive edit" :g "C-r" (lambda () (interactive)
 ;;                                         (if (minibufferp)
