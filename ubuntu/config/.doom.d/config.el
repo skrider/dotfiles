@@ -68,6 +68,8 @@
 
 (setq org-babel-default-header-args:latex '((:results . "file raw") (:exports . "results") (:file-ext . "png") (:output-dir . "ltximg")))
 
+(setq evil-snipe-scope 'buffer)
+
 ;; (map! :desc "recursive edit" :g "C-r" (lambda () (interactive)
 ;;                                         (if (minibufferp)
 ;;                                             (recursive-edit)
