@@ -81,8 +81,16 @@ alias l='ls -CF'
 
 # custom aliases
 alias psl='powershell -nologo'
-alias edge='microsoft-edge'
 alias py='python3'
+alias xclip='xclip -selection c'
+
+edge () {
+    microsoft-edge $1 &> /dev/null &
+}
+
+google () {
+    edge "https://www.google.com/search?q=$1"
+}
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
