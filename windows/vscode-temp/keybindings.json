@@ -533,5 +533,14 @@
     "key": "escape",
     "command": "-removeSecondaryCursors",
     "when": "editorHasMultipleSelections && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "closeFindWidget"
+  },
+  {
+    "key": "escape",
+    "command": "-closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
   }
 ]

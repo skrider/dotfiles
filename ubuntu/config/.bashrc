@@ -89,8 +89,14 @@ edge () {
 }
 
 google () {
-    edge "https://www.google.com/search?q=$1"
+    edge "https://www.google.com/search?q=$(echo $1 | tr " " +)"
 }
+
+amazon-shopping () {
+    edge "https://www.amazon.com/s?k=$1"
+}
+
+alias brain2='code ~/brain2/dendron.code-workspace'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
