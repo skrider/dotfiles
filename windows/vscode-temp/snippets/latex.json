@@ -44,6 +44,14 @@
     "prefix": "\\E",
     "body": ["\\Bbb{E}[$1]$0"]
   },
+  "Lagrangian": {
+    "prefix": "Lg",
+    "body": ["\\mathscr{L}"]
+  },
+  "Bracket Set": {
+    "prefix": "lrb",
+    "body": ["\\{ $0 \\\\}"]
+  },
   "Probability Distribution": {
     "prefix": "\\P",
     "body": ["\\Bbb{P}[$1]$0"]
@@ -87,6 +95,10 @@
   "BMatrix": {
     "prefix": "bmat",
     "body": ["\\begin{bmatrix}\n$0\n\\end{bmatrix}"]
+  },
+  "Cases": {
+    "prefix": "cases",
+    "body": ["\\begin{cases}\n$0\n\\end{cases}"]
   },
   "KaTeXt": {
     "prefix": "ktx",
