@@ -52,6 +52,15 @@ Sync dotfiles to this directory by creating symbolic links in the local user's h
 
 For my private VPN. Setup:
 
+Inside /dotfiles
 aws s3 cp hosts.txt s3://sk-hosts/hosts.txt
+Then go to the s3 console and set ACL as public
+
+Inside /algo
+ssh -F configs/50.18.99.155/ssh_config death3 sudo bash /usr/local/sbin/adblock.sh
+
+Or inside ssh:death3:
+sudo bash /usr/local/sbin/adblock.sh
+
 
 https://sk-hosts.s3.us-west-1.amazonaws.com/hosts.txt
