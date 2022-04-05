@@ -81,7 +81,7 @@ alias l='ls -CF'
 
 # custom aliases
 alias psl='powershell -nologo'
-alias py='python3'
+# alias py='python3'
 alias xclip='xclip -selection c'
 
 edge () {
@@ -125,4 +125,3 @@ fi
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
-

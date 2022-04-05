@@ -1,0 +1,5 @@
+# https://sk-hosts.s3.us-west-1.amazonaws.com/hosts.txt
+# aws s3 cp hosts.txt s3://sk-hosts/hosts.txt
+
+0.0.0.0 www.rule34video.com
+0.0.0.0 rule34video.com

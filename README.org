@@ -47,3 +47,11 @@ Sync dotfiles to this directory by creating symbolic links in the local user's h
 * Troubleshooting
 
 - Sometimes have trouble with some symlinks not creating. If this is the case, manually delete dotfiles and then rerun init.
+
+** Hosts
+
+For my private VPN. Setup:
+
+aws s3 cp hosts.txt s3://sk-hosts/hosts.txt
+
+https://sk-hosts.s3.us-west-1.amazonaws.com/hosts.txt
