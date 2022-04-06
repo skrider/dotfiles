@@ -56,6 +56,8 @@ Inside /dotfiles
 aws s3 cp hosts.txt s3://sk-hosts/hosts.txt
 Then go to the s3 console and set ACL as public
 
+I changed it to host off of github now. Push to SOPHON, and get a link to the raw file from github.com, and paste it into death3:/usr/local/sbin/adblock.sh
+
 Inside /algo
 ssh -F configs/50.18.99.155/ssh_config death3 sudo bash /usr/local/sbin/adblock.sh
 

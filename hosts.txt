@@ -1,6 +1,11 @@
 # https://sk-hosts.s3.us-west-1.amazonaws.com/hosts.txt
 # aws s3 cp hosts.txt s3://sk-hosts/hosts.txt
 
+# test
+
+www.coolmathgames.com
+coolmathgames.com
+
 # distractions
 
 reddit.com
