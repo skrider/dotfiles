@@ -17,6 +17,8 @@ archive.org
 duckduckgo.com
 www.duckduckgo.com
 
+# more search engines
+
 A9.com
 KellySearch.com
 search.AOL.com  
