@@ -6,6 +6,7 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
+  "keyboard.dispatch": "keyCode",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "ACReactComponentGenerator.indexFile.extension": "ts",
@@ -39,5 +40,6 @@
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
   "workbench.colorTheme": "Material Theme",
-  "editor.tabCompletion": "on"
+  "editor.tabCompletion": "on",
+  "editor.fontFamily": "'Cascadia Mono Regular', 'Droid Sans Mono', 'monospace', monospace"
 }
