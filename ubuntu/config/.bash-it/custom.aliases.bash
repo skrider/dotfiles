@@ -1,0 +1,5 @@
+alias psl='powershell -nologo'
+alias xclip='xclip -selection c'
+alias brain2='code ~/brain2/dendron.code-workspace'
+alias fcd='cd $(fd | fzf)'
+alias f='fcd'
