@@ -32,11 +32,8 @@ export GIT_HOSTING='git@git.domain.com'
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
-
 # Set this to the command you use for todo.txt-cli
-export TODO="t"
+# export TODO="t"
 
 # Set this to the location of your work or project folders
 #BASH_IT_PROJECT_PATHS="${HOME}/Projects:/Volumes/work/src"
