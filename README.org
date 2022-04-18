@@ -1,65 +1,16 @@
 * Dotfiles Repo
-** Windows
-
-*** Init
-
-#+BEGIN_SRC powershell
-node ./init-windows.js
-#+END_SRC
-
-*** Tools
-- ngrok - tunnel to localhost on local machine
-- mdloader - configure massdrop keyboards. Usage:
-#+BEGIN_SRC powershell
-./mdloader --first --download FILE_NAME --restart
-#+END_SRC
-  - After flashing the firmware, press the reset button under keyboard for changes to take effect
-
-** Linux
-
-*** Init
-
-#+BEGIN_SRC shell
-node ./init-windows.js
-#+END_SRC
-
-*** Tools
+** Tools
 - ripgrep
 - TeX Live
-- ImageMagick
-- Wakatime (time tracking)
 - emacs
   - Doom
-  - Spacemacs
   - Chemacs2 (switcher)
 - vim
   
 ** Scripts
 Found in the ./bin folder and inside a specific program, these are useful scripts meant to accomplish specific functions.
 
-*** AHK
-AutoHotKey, used for creating custom shortcuts, very powerful
+** Hashes
 
-* Architecture
+.bash_it: b950941
 
-Sync dotfiles to this directory by creating symbolic links in the local user's home directory. Uses the synchronous node fs functions. Ensure node is at least version 16.
-
-* Troubleshooting
-
-- Sometimes have trouble with some symlinks not creating. If this is the case, manually delete dotfiles and then rerun init.
-
-** Hosts
-
-For my private VPN. Setup:
-
-Inside /dotfiles
-aws s3 cp hosts.txt s3://sk-hosts/hosts.txt -acl public-read
-
-Inside /algo
-ssh -F configs/50.18.99.155/ssh_config death3 sudo bash /usr/local/sbin/adblock.sh
-
-Or inside ssh:death3:
-sudo bash /usr/local/sbin/adblock.sh
-
-
-https://sk-hosts.s3.us-west-1.amazonaws.com/hosts.txt
