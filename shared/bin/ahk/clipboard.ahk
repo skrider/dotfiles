@@ -1,3 +1,0 @@
-^!v::
-SendRaw %Clipboard%
-return

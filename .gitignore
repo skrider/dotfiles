@@ -1,2 +1,2 @@
-windows/config/.config/
-snippets
+/.vscode
+.DS_Store
