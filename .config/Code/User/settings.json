@@ -1,16 +1,12 @@
 {
-  "wolfram.app_id": "8Q4925-7K8THLG32H",
   "git.autofetch": true,
   "git.enableSmartCommit": true,
-  "spellright.ignoreRegExps": [],
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "keyboard.dispatch": "keyCode",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "ACReactComponentGenerator.indexFile.extension": "ts",
-  "ACReactComponentGenerator.styleFile.suffix": ".styles.ts",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -22,24 +18,74 @@
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
   "pasteImage.insertPattern": "${imageSyntaxPrefix}.${imageFilePath}${imageSyntaxSuffix}",
   "markdown.preview.scrollEditorWithPreview": false,
-  "markdown-pdf.outputDirectory": "~/Downloads",
-  "latex-workshop.view.pdf.viewer": "tab",
+  "markdown-pdf.outputDirectory": "~/downloads",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "remote.SSH.remotePlatform": {
     "hive20.cs.berkeley.edu": "linux",
     "hive21.cs.berkeley.edu": "linux"
   },
-  "toggl.apiKey": "a66362e574f2024a5ca303a6cf2f8b6d",
-  "dateTime.showDayOfMonth": true,
-  "dateTime.showDayOfWeek": true,
-  "dateTime.showMonth": true,
-  "dateTime.showSeconds": true,
-  "dateTime.use24HourClock": false,
-  "dateTime.padHours": false,
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Material Theme",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "editor.tabCompletion": "on",
-  "editor.fontFamily": "'Cascadia Mono Regular', 'Droid Sans Mono', 'monospace', monospace"
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono:style=Regular', 'Droid Sans Mono', 'monospace', monospace",
+  "explorer.confirmDelete": false,
+  "latex-workshop.view.pdf.backgroundColor": "#FFFFFF",
+  "latex-workshop.view.pdf.invertMode.enabled": "never",
+  "latex-workshop.view.pdf.invertMode.brightness": 0,
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.external.viewer.command": "zathura",
+  "latex-workshop.view.pdf.external.viewer.args": [
+    "--synctex-editor-command",
+    "code --reuse-window -g \"%{input}:%{line}\"",
+    "%PDF%"
+  ],
+  "latex-workshop.view.pdf.external.synctex.command": "zathura",
+  "latex-workshop.view.pdf.external.synctex.args": [
+    "--synctex-forward=%LINE%:0:%TEX%",
+    "%PDF%"
+  ],
+  "workbench.editor.revealIfOpen": true,
+  "window.menuBarVisibility": "hidden",
+  "editor.folding": false,
+  "editor.lineNumbers": "off",
+  "editor.glyphMargin": false,
+  "customizeUI.activityBar": "top",
+  "customizeUI.activityBarHideSettings": true,
+  "customizeUI.statusBarPosition": "bottom",
+  "editor.guides.indentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.overviewRulerBorder": false,
+  "editor.occurrencesHighlight": false,
+  "workbench.editor.showIcons": false,
+  "workbench.editor.tabCloseButton": "off",
+  "customizeUI.stylesheet": {
+    ".editor-actions": {
+      "display": "none"
+    },
+    ".tabs-container > .tab": {
+      "margin-top": "3px",
+      "border-radius": "3px 3px 0 0",
+      "padding": "1px"
+    },
+    ".tab > .tab-label": {
+      "transform": "translateY(-2px)"
+    }
+  },
+  "editor.minimap.enabled": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*\\.tex",
+        // "cmd": "echo hello >> ${file}",
+        "isAsync": true,
+        "cmd": "latexindent -w ${file} --cruft=/tmp"
+      }
+    ]
+  },
+  "customizeUI.font.monospace": "JetBrainsMono Nerd Font Mono:style=Regular",
+  "editor.wordWrap": "on",
+  "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <script   type=\"text/javascript\"   src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" ></script> <script type=\"text/x-mathjax-config\">   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: \"none\" }); </script><span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>"
 }

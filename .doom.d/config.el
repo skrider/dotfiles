@@ -91,3 +91,14 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+"Fonts"
+
+ '(org-level-1 ((t (:weight normal))))
+ '(org-level-2 ((t (:weight normal))))
+ '(org-level-3 ((t (:weight normal))))
+ '(org-level-4 ((t (:weight normal))))
+ '(org-level-5 ((t (:weight normal))))
+ '(org-level-6 ((t (:weight normal))))
+ '(org-level-7 ((t (:weight normal))))
+ '(org-level-8 ((t (:weight normal))))

@@ -160,5 +160,10 @@
   "Multiline Equation": {
     "prefix": "em",
     "body": ["$\n$0\n$"]
+  },
+  // formatting
+  "Bold Text": {
+    "prefix": "\\tb",
+    "body": "\\textbf{$1}$0"
   }
 }

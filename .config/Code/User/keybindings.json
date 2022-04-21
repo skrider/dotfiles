@@ -331,7 +331,7 @@
     "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
   },
   {
-    "key": "ctrl+alt+pagedown",
+    "key": "alt+pagedown",
     "command": "workbench.action.focusNextGroup"
   },
   {
@@ -595,11 +595,6 @@
   },
   {
     "key": "escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "escape",
     "command": "-extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
@@ -612,5 +607,18 @@
     "key": "ctrl+k ctrl+i",
     "command": "-editor.action.showHover",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "alt+pagedown",
+    "command": "-scrollPageDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.openLink"
   }
 ]
