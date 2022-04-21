@@ -618,7 +618,11 @@
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+enter",
-    "command": "editor.action.openLink"
+    "key": "ctrl+alt+backspace",
+    "command": "workbench.action.navigateToLastEditLocation"
+  },
+  {
+    "key": "ctrl+k ctrl+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
   }
 ]
