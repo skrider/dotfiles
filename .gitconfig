@@ -10,3 +10,4 @@
 	helper = wincred
 [core]
 	editor = code --wait
+	excludesfile = /home/sk/.gitignore_global
