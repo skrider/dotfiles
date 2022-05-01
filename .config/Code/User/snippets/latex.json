@@ -96,6 +96,10 @@
     "prefix": "bmat",
     "body": ["\\begin{bmatrix}\n$0\n\\end{bmatrix}"]
   },
+  "Partial Derivative": {
+    "prefix": "ppd",
+    "body": "\\frac{\\partial}{\\partial $1}$0"
+  },
   "Cases": {
     "prefix": "cases",
     "body": ["\\begin{cases}\n$0\n\\end{cases}"]

@@ -27,7 +27,7 @@
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark",
   "editor.tabCompletion": "on",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono:style=Regular', 'Droid Sans Mono', 'monospace', monospace",
   "explorer.confirmDelete": false,
@@ -90,5 +90,21 @@
   "editor.cursorSurroundingLines": 12,
   "[go]": {
     "editor.lineNumbers": "on",
-  }
+  },
+  "[c]": {
+    "editor.lineNumbers": "on",
+  },
+  "[typescriptreact]": {
+    "editor.lineNumbers": "on",
+  },
+  "[typescript]": {
+    "editor.lineNumbers": "on",
+  },
+  "[javascript]": {
+    "editor.lineNumbers": "on",
+  },
+  "[javascriptreact]": {
+    "editor.lineNumbers": "on",
+  },
+  "workbench.editor.showTabs": false
 }
