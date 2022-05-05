@@ -34,7 +34,7 @@
   "latex-workshop.view.pdf.backgroundColor": "#FFFFFF",
   "latex-workshop.view.pdf.invertMode.enabled": "never",
   "latex-workshop.view.pdf.invertMode.brightness": 0,
-  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.external.viewer.command": "zathura",
   "latex-workshop.view.pdf.external.viewer.args": [
     "--synctex-editor-command",
@@ -43,7 +43,7 @@
   ],
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": [
-    "--synctex-forward=%LINE%:0:%TEX%",
+    "--synctex-forward=%LINE%:0",
     "%PDF%"
   ],
   "workbench.editor.revealIfOpen": true,
@@ -71,6 +71,9 @@
     },
     ".tab > .tab-label": {
       "transform": "translateY(-2px)"
+    },
+    ".editor-group-container.active .title > * > *:first-child": {
+      "font-weight": "bold !important"
     }
   },
   "editor.minimap.enabled": false,
@@ -89,22 +92,27 @@
   "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <script   type=\"text/javascript\"   src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" ></script> <script type=\"text/x-mathjax-config\">   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: \"none\" }); </script><span class='title'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
   "editor.cursorSurroundingLines": 12,
   "[go]": {
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "on"
   },
   "[c]": {
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "on"
   },
   "[typescriptreact]": {
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "on"
   },
   "[typescript]": {
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "on"
   },
   "[javascript]": {
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "on"
   },
   "[javascriptreact]": {
+    "editor.lineNumbers": "on"
+  },
+  "[java]": {
     "editor.lineNumbers": "on",
+    "editor.glyphMargin": true,
+    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
   },
   "workbench.editor.showTabs": false
 }
