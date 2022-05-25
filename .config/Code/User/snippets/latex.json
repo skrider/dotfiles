@@ -12,6 +12,10 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  "Derivative with Respect to": {
+    "prefix": "ddw",
+    "body": "\\frac{d}{d $1} $0"
+  },
   "Derivative with Respect to Time": {
     "prefix": "ddt",
     "body": "\\frac{d}{dt} $0"

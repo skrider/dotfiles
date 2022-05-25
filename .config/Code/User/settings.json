@@ -27,7 +27,7 @@
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Light",
   "editor.tabCompletion": "on",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono:style=Regular', 'Droid Sans Mono', 'monospace', monospace",
   "explorer.confirmDelete": false,
@@ -114,5 +114,6 @@
     "editor.glyphMargin": true,
     "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
   },
-  "workbench.editor.showTabs": false
+  "workbench.editor.showTabs": false,
+  "workbench.startupEditor": "none"
 }

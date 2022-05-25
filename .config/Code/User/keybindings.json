@@ -323,7 +323,7 @@
     "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
   },
   {
-    "key": "ctrl+pageup",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.focusPreviousGroup"
   },
   {
@@ -645,5 +645,9 @@
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "-workbench.action.splitEditor"
   }
 ]
