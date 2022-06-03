@@ -208,11 +208,11 @@
     "when": "fileMatchOrMatchFocus && searchViewletVisible"
   },
   {
-    "key": "ctrl+alt+up",
+    "key": "ctrl+k",
     "command": "editor.action.insertCursorAbove"
   },
   {
-    "key": "ctrl+alt+down",
+    "key": "ctrl+j",
     "command": "editor.action.insertCursorBelow"
   },
   {
@@ -649,5 +649,9 @@
   {
     "key": "ctrl+\\",
     "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
