@@ -79,7 +79,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+i",
+    "key": "ctrl+h",
     "command": "extension.pasteImage",
     "when": "editorTextFocus"
   },
