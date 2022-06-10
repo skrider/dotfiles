@@ -10,3 +10,14 @@ alias fff='fd -H | fzf'
 alias fcd='cd $(ffd)'
 alias fco='code $(fff)'
 alias fhi='cat ~/.bash_history | sort | uniq | fzf'
+alias ibash='bash -l'
+
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        /usr/local/bin/ranger "$@"
+    else
+        exit
+    fi
+}
+
+

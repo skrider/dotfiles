@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+export PATH="$PATH:/usr/local/opt/openssl/bin"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+alias bash='bash -l'
 
 # If not running interactively, don't do anything
 case $- in
@@ -7,7 +9,7 @@ case $- in
 esac
 
 # Path to the bash it configuration
-export BASH_IT="/home/sk/.bash-it"
+export BASH_IT="/Users/stephen.krider/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -27,10 +29,13 @@ export BASH_IT_THEME='powerline-plain'
 # export BASH_IT_DEVELOPMENT_BRANCH='master'
 
 # Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.domain.com'
+# export GIT_HOSTING='git@git.domain.com'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
+
+# Change this to your console based IRC client of choice.
+# export IRC_CLIENT='irssi'
 
 # Set this to the command you use for todo.txt-cli
 # export TODO="t"
@@ -79,4 +84,3 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
-. "$HOME/.cargo/env"
