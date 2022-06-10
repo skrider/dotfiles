@@ -5,9 +5,8 @@
 	required = true
 [user]
 	name = Stephen Krider
-	email = skrider@berkeley.edu
-[credential]
-	helper = wincred
+	email = stephen.krider@zocdoc.com
 [core]
 	editor = code --wait
-	excludesfile = /home/sk/.gitignore_global
+	excludesfile = /Users/stephen.krider/.gitignore_global
+
