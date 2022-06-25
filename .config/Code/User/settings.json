@@ -48,7 +48,6 @@
   ],
   "workbench.editor.revealIfOpen": true,
   "window.menuBarVisibility": "hidden",
-  "editor.folding": false,
   "editor.lineNumbers": "off",
   "editor.glyphMargin": false,
   "customizeUI.activityBar": "top",
