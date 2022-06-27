@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Stephen Krider
+	name = skrider
 	email = skrider@berkeley.edu
 [credential]
 	helper = wincred

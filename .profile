@@ -8,6 +8,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+NPM_PACKAGES="${HOME}/.npm-packages"
+if [ -d $NPM_PACKAGES ] ; then
+	PATH="$PATH:$NPM_PACKAGES/bin"	
+	export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+fi
+
 if [ -d "/usr/local/texlive/2021/bin/x86_64-linux" ] ; then
     PATH="/usr/local/texlive/2021/bin/x86_64-linux:$PATH"
 fi
