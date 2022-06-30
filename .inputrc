@@ -1,2 +1,6 @@
 $include /etc/inputrc
 set completion-ignore-case On
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \e[0;48;5;208m I \e[0m
+set vi-cmd-mode-string \e[0;48;5;206m N \e[0m

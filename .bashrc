@@ -12,7 +12,7 @@ export BASH_IT="/home/sk/.bash-it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='powerline-plain'
 
 # Some themes can show whether `sudo` has a current token or not.
 # Set `$THEME_CHECK_SUDO` to `true` to check every prompt:
@@ -41,7 +41,7 @@ unset MAILCHECK
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 # Set to actual location of gitstatus directory if installed
-#export SCM_GIT_GITSTATUS_DIR="$HOME/gitstatus"
+export SCM_GIT_GITSTATUS_DIR="$HOME/.gitstatus"
 # per default gitstatus uses 2 times as many threads as CPU cores, you can change this here if you must
 #export GITSTATUS_NUM_THREADS=8
 
