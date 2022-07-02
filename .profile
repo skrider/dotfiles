@@ -23,6 +23,14 @@ if [ -d "/usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin" ] ; then
 	PATH="/usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin:$PATH"
 fi
 
+# if interactive
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+    fi
+fi
+
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/go/bin"
 
