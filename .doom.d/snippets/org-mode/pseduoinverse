@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: pseduoinverse
-# key: pv
-# --
-$1^\dagger$0

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name:latex environment
-# key:lenv
-# --
-#+BEGIN_SRC latex :file temp`(time-convert nil 'integer)`.png
-equ$0
-#+END_SRC

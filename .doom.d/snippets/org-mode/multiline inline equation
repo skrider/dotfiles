@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name:multiline inline equation
-# key:lin
-# --
-$$
-$0
-$$
