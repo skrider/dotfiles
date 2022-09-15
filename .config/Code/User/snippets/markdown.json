@@ -4,13 +4,17 @@
     "prefix": "ema",
     "body": ["$", "\\begin{align*}$0", "\\end{align*}", "$"]
   },
+  "Multiline Verbatim Environment": {
+    "prefix": "eva",
+    "body": ["$", "\\begin{verbatim}$0", "\\end{verbatim}", "$"]
+  },
   "Inline Equation": {
     "prefix": "e",
     "body": ["$$1$ $0"]
   },
   "Big Equation": {
     "prefix": "eb",
-    "body": ["$ $0 $"]
+    "body": ["$$0 $"]
   },
   "Multiline Equation": {
     "prefix": "em",
@@ -33,7 +37,7 @@
   },
   "italics": {
     "prefix": "i",
-    "body": "_$1_ $0"
+    "body": "*$1* $0"
   },
   "bold": {
     "prefix": "b",
