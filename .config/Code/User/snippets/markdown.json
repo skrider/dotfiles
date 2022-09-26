@@ -6,7 +6,11 @@
   },
   "Multiline Verbatim Environment": {
     "prefix": "eva",
-    "body": ["$", "\\begin{verbatim}$0", "\\end{verbatim}", "$"]
+    "body": ["\\begin{lstlisting}$0", "\\end{lstlisting}"]
+  },
+  "Header LST Listing": {
+    "prefix": "headerlst",
+    "body": ["- \\usepackage{listings}", "- \\lstset{mathescape}"]
   },
   "Inline Equation": {
     "prefix": "e",

@@ -27,7 +27,7 @@
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Quiet Light",
+  "workbench.colorTheme": "Community Material Theme Darker",
   "editor.tabCompletion": "on",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono:style=Regular', 'Droid Sans Mono', 'monospace', monospace",
   "explorer.confirmDelete": false,
@@ -102,5 +102,6 @@
   "update.mode": "none",
   "files.associations": {
     "*.latex": "tex"
-  }
+  },
+  "glassit.alpha": 220
 }

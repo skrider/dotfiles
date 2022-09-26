@@ -28,6 +28,10 @@
     "prefix": "tl",
     "body": "\\tilde{$1}$0"
   },
+  "Bold Symbol": {
+    "prefix": "bsy",
+    "body": "\\boldsymbol $0"
+  },
   "Square Root": {
     "prefix": "sqr",
     "body": "\\sqrt{$1}$0"

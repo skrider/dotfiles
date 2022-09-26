@@ -1,1 +1,3 @@
 set sandbox none
+set highlight-transparency 0.1
+map c recolor
