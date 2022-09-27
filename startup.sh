@@ -25,12 +25,8 @@ start_alacritty () {
 	do
 		$(which sleep) 0.1
 	done
-	# maximize and switch to alacritty
-	wmctrl -r $alacritty_window_name -b add,fullscreen
-	sleep 0.05
-	wmctrl -s 2
-	sleep 0.05
-	wmctrl -R $alacritty_window_name
+	# note for posterity - wmctrl is really shitty and not worth messing with. Most flags don't even work.
+ 	wmctrl -R $alacritty_window_name
 }
 start_alacritty &
 

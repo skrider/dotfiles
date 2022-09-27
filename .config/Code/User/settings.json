@@ -27,7 +27,7 @@
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "extensions.ignoreRecommendations": true,
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "Solarized Light",
   "editor.tabCompletion": "on",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono:style=Regular', 'Droid Sans Mono', 'monospace', monospace",
   "explorer.confirmDelete": false,
