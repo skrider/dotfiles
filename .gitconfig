@@ -7,7 +7,9 @@
 	name = skrider
 	email = skrider@berkeley.edu
 [credential]
-	helper = wincred
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [core]
 	editor = code --wait
 	excludesfile = /home/sk/.gitignore_global
+[credential "https://dev.azure.com"]
+	useHttpPath = true
