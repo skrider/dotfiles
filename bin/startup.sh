@@ -14,19 +14,19 @@ unclutter -idle 1 -regex -not 'Firefox|Gpick|LibreOffice' &
 # firefox
 echo Starting firefox
 firefox &
-# alacritty
-echo Starting alacritty
-start_alacritty () {
-	alacritty_window_name="alacritty_terminal"
-	# start detached alacritty
-	alacritty --title=$alacritty_window_name &
-	# poll wmctrl until alacritty is found
-	while [[ ! $(wmctrl -l) =~ $alacritty_window_name ]]
+# kitty
+echo Starting kitty
+start_kitty () {
+	kitty_window_name="kitty_terminal"
+	# start detached kitty
+	kitty --title=$kitty_window_name &
+	# poll wmctrl until kitty is found
+	while [[ ! $(wmctrl -l) =~ $kitty_window_name ]]
 	do
 		$(which sleep) 0.1
 	done
 	# note for posterity - wmctrl is really shitty and not worth messing with. Most flags don't even work.
- 	wmctrl -R $alacritty_window_name
+ 	wmctrl -R $kitty_window_name
 }
-start_alacritty &
+start_kitty &
 

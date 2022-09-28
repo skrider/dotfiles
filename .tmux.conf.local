@@ -4,6 +4,10 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+# -- misc ----------------------------------------------------------------------
+
+bind e run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _fpp #{pane_id}'"
+bind E run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _urlview #{pane_id}'"
 
 # -- navigation ----------------------------------------------------------------
 
@@ -39,8 +43,9 @@ tmux_conf_new_pane_reconnect_ssh=false
 #   - true
 #   - false (default)
 #   - disabled (do not modify new-session bindings)
-tmux_conf_new_session_prompt=false
+tmux_conf_new_session_prompt=true
 
+set -g status-position top
 
 # -- display -------------------------------------------------------------------
 
@@ -217,7 +222,7 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_percentage, #{battery_percentage},} %R %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} , #{cpu_percentage} ,#{?battery_percentage, #{battery_percentage},} , %R %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -377,10 +382,11 @@ tmux_conf_uninstall_plugins_on_reload=true
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
 #set -g @plugin 'tmux-plugins/tmux-copycat'
-#set -g @plugin 'tmux-plugins/tmux-cpu'
-#set -g @plugin 'tmux-plugins/tmux-resurrect'
-#set -g @plugin 'tmux-plugins/tmux-continuum'
-#set -g @continuum-restore 'on'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @continuum-restore 'on'
 
 
 # -- custom variables ----------------------------------------------------------
