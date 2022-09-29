@@ -17,3 +17,6 @@ alias fco='code $(fff)'
 
 # look through bash history
 alias fhi='cat ~/.bash_history | sort | uniq | fzf'
+
+# edit faaaaast
+alias nv="nvim"
