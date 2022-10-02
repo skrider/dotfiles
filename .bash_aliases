@@ -20,3 +20,7 @@ alias fhi='cat ~/.bash_history | sort | uniq | fzf'
 
 # edit faaaaast
 alias nv="nvim"
+
+# new kitty window
+alias nkitty="nohup kitty &> /dev/null &"
+
