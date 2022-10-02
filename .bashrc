@@ -7,3 +7,16 @@ export EDITOR=nvim
 export GCM_CREDENTIAL_STORE=gpg
 
 . "$HOME/.cargo/env"
+
+_edit_wo_executing() {
+    local editor="${EDITOR:-nano}"
+    tmpf="$(mktemp).sh"
+    printf '%s\n' "$READLINE_LINE" > "$tmpf"
+    $editor "$tmpf"
+    READLINE_LINE="$(<"$tmpf")"
+    READLINE_POINT="${#READLINE_LINE}"
+    rm "$tmpf"
+}
+
+bind -m vi-command -x '"v":_edit_wo_executing'
+
