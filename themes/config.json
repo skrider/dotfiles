@@ -9,39 +9,39 @@
             "source_dir": "~/.dotfiles/themes/gitui",
             "theme_name_mapping": {
                 "solarized_light": "solarized-light.ron",
-                "ondark": "onedark.ron"
+                "onedark": "onedark.ron"
             }
         },
         "nvim": {
-            "destination_file": "~/.config/nvim/core/colorschemes.lua",
+            "destination_file": "~/.config/nvim/core/colorscheme.vim",
             "source_dir": "~/.dotfiles/themes/nvim",
             "theme_name_mapping": {
-                "solarized_light": "solarized-light.lua",
-                "ondark": "onedark.lua"
+                "solarized_light": "solarized-light.vim",
+                "onedark": "onedark.vim"
             }
         },
         "kitty": {
-            "destination_file": "~/.kitty-theme.conf",
+            "destination_file": "~/.config/kitty/kitty-theme.conf",
             "source_dir": "~/.kitty-themes/themes",
             "theme_name_mapping": {
                 "solarized_light": "Solarized_Light.conf",
-                "ondark": "OneDark.conf"
+                "onedark": "OneDark.conf"
             }
         },
         "tmux": {
-            "destination_file": "~/.tmux.theme.conf",
+            "destination_file": "~/.tmux.conf.local.theme",
             "source_dir": "~/.dotfiles/themes/tmux",
             "theme_name_mapping": {
-                "solarized_light": "solarized-light.lua",
-                "ondark": "onedark.lua"
+                "solarized_light": "solarized-light",
+                "onedark": "onedark"
             }
         },
         "bash": {
-            "destination_file": "~/.bash_theme",
+            "destination_file": "~/.bash_theme.bash",
             "source_dir": "~/.dotfiles/themes/bash",
             "theme_name_mapping": {
                 "solarized_light": "solarized-light.bash",
-                "ondark": "onedark.bash"
+                "onedark": "onedark.bash"
             }
         }
     }
