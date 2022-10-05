@@ -1,7 +1,7 @@
 (
     selected_tab: Reset,
-    command_fg: Reset,
-    selection_bg: Blue,
+    command_fg: Black,
+    selection_bg: Indexed(12),
     cmdbar_extra_lines_bg: Blue,
     disabled_fg: Indexed(6),
     diff_line_add: Green,
