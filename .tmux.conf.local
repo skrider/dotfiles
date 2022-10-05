@@ -9,6 +9,11 @@
 bind e run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _fpp #{pane_id}'"
 bind E run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _urlview #{pane_id}'"
 
+# -- tmux-fzf ------------------------------------------------------------------
+
+TMUX_FZF_MENU=\
+"calvisitor on \n nmcli connection up id CalVisitor \n"
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -63,14 +68,14 @@ tmux_conf_24b_colour=false
 tmux_conf_theme_colour_1="colour0"
 tmux_conf_theme_colour_2="colour8"
 tmux_conf_theme_colour_3="colour8"
-tmux_conf_theme_colour_4="colour14"
+tmux_conf_theme_colour_4="colour11"
 tmux_conf_theme_colour_5="colour11"
-tmux_conf_theme_colour_6="colour0"
+tmux_conf_theme_colour_6="colour0" # black
 tmux_conf_theme_colour_7="colour15"
 tmux_conf_theme_colour_8="colour0"
-tmux_conf_theme_colour_9="colour11"
-tmux_conf_theme_colour_10="colour13"
-tmux_conf_theme_colour_11="colour10"
+tmux_conf_theme_colour_9="colour2"
+tmux_conf_theme_colour_10="#3E4452"
+tmux_conf_theme_colour_11=""
 tmux_conf_theme_colour_12="colour8"
 tmux_conf_theme_colour_13="colour15"
 tmux_conf_theme_colour_14="colour0"
@@ -96,8 +101,8 @@ tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border="$tmux_conf_theme_colour_5"
-tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_10"
+tmux_conf_theme_pane_border="$tmux_conf_theme_colour_10"
+tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_5"
 
 # pane indicator colours (when you hit <prefix> + q)
 tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
@@ -120,7 +125,7 @@ tmux_conf_theme_mode_attr="bold"
 
 # status line style
 tmux_conf_theme_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_status_bg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_status_bg="$tmux_conf_theme_colour_6"
 tmux_conf_theme_status_attr="none"
 
 # terminal title
@@ -222,7 +227,8 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} , #{cpu_percentage} ,#{?battery_percentage, #{battery_percentage},} , %R %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right="  #{cpu_percentage} ,#{?battery_percentage, #{battery_percentage},} , %R %d %b | #{username}#{root} | #{hostname} "
+# #{prefix}#{mouse}#{pairing}#{synchronized} ,
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -230,8 +236,8 @@ tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colou
 tmux_conf_theme_status_left_attr="bold,none,none"
 
 # status right style
-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_4,$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_17"
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_6"
+tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_4,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_9"
 tmux_conf_theme_status_right_attr="none,none,bold"
 
 # pairing indicator

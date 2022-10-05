@@ -17,6 +17,8 @@ if [[ $- == *i* ]]; then
 	bind -m vi-command -x '"v":_edit_wo_executing'
 fi
 
+export BAT_THEME=ansi
+
 source ~/.bash_aliases
 export EDITOR=nvim
 export GCM_CREDENTIAL_STORE=gpg
