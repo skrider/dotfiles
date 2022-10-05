@@ -25,9 +25,7 @@ export GCM_CREDENTIAL_STORE=gpg
 
 . "$HOME/.cargo/env"
 
-
-
-
+complete -C '/usr/local/bin/aws_completer' aws
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
