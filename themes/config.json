@@ -36,6 +36,14 @@
                 "onedark": "onedark"
             }
         },
+        "background": {
+            "destination_file": "~/.wallpaper.jpg",
+            "source_dir": "~/.dotfiles/themes/background",
+            "theme_name_mapping": {
+                "solarized_light": "frigate.jpg",
+                "onedark": "frigate.jpg"
+            }
+        },
         "bash": {
             "destination_file": "~/.bash_theme.bash",
             "source_dir": "~/.dotfiles/themes/bash",

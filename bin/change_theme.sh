@@ -29,3 +29,6 @@ for (( i = 0; i < $(cat $config_file | jq ".programs | keys | length"); i++ )); 
     eval ln -s $source_file $dest_file
 done
 
+background_dest=$(cat $config_file | jq -r ".programs.background.destination_file" | sd '~' $HOME)
+gsettings set org.gnome.desktop.background picture-uri $background_dest
+
