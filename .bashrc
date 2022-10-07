@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-
 _edit_wo_executing() {
     local editor="${EDITOR:-nano}"
     tmpf="$(mktemp).sh"
-    printf '%s\n' "$READLINE_LINE" > "$tmpf"
+    echo '#!/bin/bash' > "$tmpf"
+    printf '%s\n' "$READLINE_LINE" \
+        | shfmt >> "$tmpf"
     $editor "$tmpf"
-    READLINE_LINE="$(<"$tmpf")"
+    READLINE_LINE="$(tail -n +2 < "$tmpf")"
     READLINE_POINT="${#READLINE_LINE}"
     rm "$tmpf"
 }
