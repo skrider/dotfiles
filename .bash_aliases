@@ -14,6 +14,7 @@ alias ffd='fd -H --type d | fzf || echo .'
 alias fff='fd -H | fzf'
 alias fcd='cd $(ffd)'
 alias fco='code $(fff)'
+alias fnv='nvim $(fff)'
 
 # look through bash history
 alias fhi='cat ~/.bash_history | sort | uniq | fzf'
