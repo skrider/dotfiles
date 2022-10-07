@@ -8,6 +8,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.cabal/bin:$PATH"
+fi
+
 NPM_PACKAGES="${HOME}/.npm-packages"
 if [ -d $NPM_PACKAGES ] ; then
 	PATH="$PATH:$NPM_PACKAGES/bin"	
