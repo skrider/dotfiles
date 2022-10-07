@@ -24,3 +24,12 @@ alias nv="nvim"
 # new kitty window
 alias nkitty="nohup kitty &> /dev/null &"
 
+# directory mark, maintains state in env
+alias md='SKRIDER_DIRS=${SKRIDER_DIRS:=0};'\
+'SKRIDER_DIRS=$(($SKRIDER_DIRS + 1));'\
+'alias cd$SKRIDER_DIRS="cd $(pwd)";'\
+'echo $SKRIDER_DIRS'
+
+# cd to dotfiles
+alias cdd="cd $HOME/.dotfiles"
+
