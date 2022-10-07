@@ -16,7 +16,10 @@ source -q ~/.tmux.conf.local.theme
 # -- tmux-fzf ------------------------------------------------------------------
 
 TMUX_FZF_MENU=\
-"calvisitor on \n nmcli connection up id CalVisitor \n"
+"calvisitor on \n nmcli connection up id CalVisitor \n"\
+"snips \n "\
+"tmux popup -E -d /home/sk/.local/share/nvim/site/pack/packer/opt/vim-snippets/UltiSnips "\
+"nvim . \n"
 
 # -- navigation ----------------------------------------------------------------
 
