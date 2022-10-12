@@ -103,5 +103,8 @@
   "files.associations": {
     "*.latex": "tex"
   },
-  "glassit.alpha": 220
+  "glassit.alpha": 220,
+  "vscode-neovim.neovimClean": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.revealCursorScrollLine": true
 }
