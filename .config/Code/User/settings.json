@@ -106,5 +106,7 @@
   "glassit.alpha": 220,
   "vscode-neovim.neovimClean": true,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "vscode-neovim.revealCursorScrollLine": true
+  "vscode-neovim.revealCursorScrollLine": true,
+  "vscode-neovim.useCtrlKeysForInsertMode": false,
+  "vscode-neovim.useCtrlKeysForNormalMode": false
 }
