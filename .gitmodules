@@ -4,3 +4,12 @@
 [submodule "gtypist/gtypist-workman"]
 	path = gtypist/gtypist-workman
 	url = https://github.com/cofi/gtypist-workman
+[submodule "custom-nvim-plugins/reply.vim"]
+	path = custom-nvim-plugins/reply.vim
+	url = https://github.com/skrider/reply.vim.git
+[submodule "custom-nvim-plugins/vim-snippets"]
+	path = custom-nvim-plugins/vim-snippets
+	url = https://github.com/skrider/vim-snippets.git
+[submodule ".treesitter/tree-sitter-markdown"]
+	path = .treesitter/tree-sitter-markdown
+	url = https://github.com/ikatyang/tree-sitter-markdown
