@@ -34,3 +34,6 @@ alias md='SKRIDER_DIRS=${SKRIDER_DIRS:=0};'\
 # cd to dotfiles
 alias cdd="cd $HOME/.dotfiles"
 
+# make jupyter_ascending synced pair
+alias jupyter_ascending_sync='python -m jupyter_ascending.scripts.make_pair --base'
+

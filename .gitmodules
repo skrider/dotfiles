@@ -10,6 +10,3 @@
 [submodule "custom-nvim-plugins/vim-snippets"]
 	path = custom-nvim-plugins/vim-snippets
 	url = https://github.com/skrider/vim-snippets.git
-[submodule ".treesitter/tree-sitter-markdown"]
-	path = .treesitter/tree-sitter-markdown
-	url = https://github.com/ikatyang/tree-sitter-markdown
