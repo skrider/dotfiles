@@ -4,4 +4,4 @@ UltiSnips
 .config/wtf/gcal/credentials.json
 .config/wtf/stephenjkrider@gmail.com-gcal-auth.json
 bin/port-info-lookup.sh
-.env
+.bash_env
