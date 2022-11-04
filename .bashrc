@@ -20,8 +20,14 @@ fi
 
 source ~/.bash_aliases
 source ~/.bash_theme.bash
+source ~/.bash_env
 export EDITOR=nvim
 export GCM_CREDENTIAL_STORE=gpg
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 . "$HOME/.cargo/env"
 
