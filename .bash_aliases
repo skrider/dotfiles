@@ -37,3 +37,5 @@ alias cdd="cd $HOME/.dotfiles"
 # make jupyter_ascending synced pair
 alias jupyter_ascending_sync='python -m jupyter_ascending.scripts.make_pair --base'
 
+# send a notification
+alias notify='notify-send -u critical -t 10000 shell'
