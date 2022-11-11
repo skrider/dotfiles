@@ -10,7 +10,7 @@ JUPYTER=0
 LSP=0
 
 # parse options p, numeric, and jupyter
-while getopts ":p:njs" opt; do
+while getopts ":p:njsh" opt; do
   case $opt in
     p) PYTHON_VERSION="$OPTARG"
     ;;
@@ -19,6 +19,14 @@ while getopts ":p:njs" opt; do
     s) LSP=1
     ;;
     j) JUPYTER=1
+    ;;
+    h) echo "Usage: init-venv.sh [-p python_version] [-n] [-j] [-s] [-h]"
+       echo "  -p python_version: specify python version, default is 3.10.8"
+       echo "  -n: install numpy, scipy, matplotlib"
+       echo "  -j: install jupyter"
+       echo "  -s: install python-language-server"
+       echo "  -h: print this help message"
+       exit 0
     ;;
   esac
 done
@@ -30,6 +38,7 @@ python -m venv venv
 source venv/bin/activate
 
 # install dependencies
+pip install --upgrade pip
 pip install pynvim
 
 # conditionally install jupyter dependencies
