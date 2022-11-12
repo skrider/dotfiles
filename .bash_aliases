@@ -39,3 +39,6 @@ alias jupyter_ascending_sync='python -m jupyter_ascending.scripts.make_pair --ba
 
 # send a notification
 alias notify='notify-send -u critical -t 10000 shell'
+
+# init conda for session
+alias conda_bootstrap='eval "$($HOME/miniconda3/bin/conda shell.bash hook)"'
