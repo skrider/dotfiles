@@ -41,4 +41,11 @@ alias jupyter_ascending_sync='python -m jupyter_ascending.scripts.make_pair --ba
 alias notify='notify-send -u critical -t 10000 shell'
 
 # init conda for session
-alias conda_bootstrap='eval "$($HOME/miniconda3/bin/conda shell.bash hook)"'
+alias conda_bootstrap='eval "$($HOME/mambaforge/bin/conda shell.bash hook)"'
+
+# start spt in kitty window
+alias kspt='nohup kitty --class spt spt &> /dev/null &'
+
+# fische from microphone
+alias fische_mic='fische --device alsa_input.pci-0000_00_1f.3-platform-sof_sdw.HiFi__hw_sofsoundwire_4__source'
+
