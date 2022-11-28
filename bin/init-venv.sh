@@ -2,7 +2,7 @@
 
 set -o errexit
 set -o nounset
-set -o xtrace
+# set -o xtrace
 
 PYTHON_VERSION="${PYTHON_VERSION:-3.10.8}"
 NUMERIC=0
@@ -31,18 +31,21 @@ while getopts ":p:njsh" opt; do
   esac
 done
 
-# create virtual environment
-
-pyenv local $PYTHON_VERSION
-python -m venv venv
-source venv/bin/activate
-
-# install dependencies
-pip install --upgrade pip
-pip install pynvim
+# source virtual environment if one exists
+if [ -f venv/bin/activate ]; then
+  source venv/bin/activate
+fi
+# else create virtual environment and source
+if [ ! -d venv ]; then
+  pyenv local $PYTHON_VERSION
+  python -m venv venv
+  source venv/bin/activate
+  pip install --upgrade pip
+  pip install pynvim
+fi
 
 # conditionally install jupyter dependencies
-if [ -n "$JUPYTER" ]; then
+if [ "$JUPYTER" == 1 ]; then
   pip install jupyter ipykernel jupyter-ascending
   jupyter nbextension    install jupyter_ascending --sys-prefix --py
   jupyter nbextension     enable jupyter_ascending --sys-prefix --py
@@ -50,12 +53,12 @@ if [ -n "$JUPYTER" ]; then
 fi
 
 # conditionally install numeric dependencies
-if [ -n "$NUMERIC" ]; then
+if [ "$NUMERIC" == 1 ]; then
   pip install numpy scipy matplotlib
 fi
 
 # install LSP dependencies
-if [ -n "$LSP" ]; then
+if [ "$LSP" == 1 ]; then
   pip install 'python-language-server[all]'
 fi
 
