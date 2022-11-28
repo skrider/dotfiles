@@ -9,10 +9,22 @@ set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set ssl_force_tls = yes
 
+# caching
+set header_cache     = "$HOME/Mail"
+set message_cachedir = "$HOME/Mail"
+
+# dealing with HTML
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# UI
+set sort = reverse-date-received
+macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
 # G to get mail
 bind index G imap-fetch-mail
 set editor = "nvim"
 set charset = "utf-8"
+
 set record = ''
  set imap_authenticators="oauthbearer:xoauth2"
  set imap_oauth_refresh_command="~/.mutt/mutt_oauth2.py ~/.mutt/mutt_token.token"
