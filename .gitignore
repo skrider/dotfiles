@@ -7,3 +7,4 @@ bin/port-info-lookup.sh
 .bash_env
 .mutt/mutt_oauth2.py
 .mutt/mutt_token.token
+bin/bootstrap_tmux_env
