@@ -8,6 +8,7 @@
 
 bind e run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _fpp #{pane_id}'"
 bind E run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _urlview #{pane_id}'"
+bind c run "tmux new-window -c \"$(tmux display-message -p -F '#{pane_current_path}')\""
 
 # -- theme ---------------------------------------------------------------------
 
