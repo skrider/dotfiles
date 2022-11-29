@@ -28,12 +28,28 @@ export GCM_CREDENTIAL_STORE=gpg
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+
+# virtual env auto init
+_venv_hook () {
+  # if variable VENV_CMD is set and VIRTUAL_ENV is not, activate it
+  if [ -n "$VENV_CMD" ] && [ -z "$VIRTUAL_ENV" ]; then
+    eval "$VENV_CMD"
+  fi
+
+  # if variable VENV_CMD is not set and VIRTUAL_ENV is, deactivate it
+  if [ -z "$VENV_CMD" ] && [ -n "$VIRTUAL_ENV" ]; then
+    deactivate
+  fi
+}
+export _venv_hook
+# add hook to PROMPT_COMMAND
+export PROMPT_COMMAND="_venv_hook;$PROMPT_COMMAND"
+
+# add direnv hook after _venv_hook
+eval "$(direnv hook bash)"
 
 . "$HOME/.cargo/env"
 
 complete -C '/usr/local/bin/aws_completer' aws
 
-# direnv
-eval "$(direnv hook bash)"
 
