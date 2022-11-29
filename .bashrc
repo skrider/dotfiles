@@ -28,8 +28,12 @@ export GCM_CREDENTIAL_STORE=gpg
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 . "$HOME/.cargo/env"
 
 complete -C '/usr/local/bin/aws_completer' aws
+
+# direnv
+eval "$(direnv hook bash)"
 
