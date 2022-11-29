@@ -22,15 +22,14 @@ if [ -z "${VIRTUAL_ENV:-}" ]; then
   # specify python version
   pyenv local $PYTHON_VERSION
   # create virtual environment
-  echo 'layout python3' > .envrc
-  # ensure venv is sourced if it is present
-  direnv allow
-fi
-
-_init_this_venv () {
+  python -m venv venv
+  # add to direnv
+  echo -e "export VENV_CMD=\"source $(pwd)/venv/bin/activate\"" > .envrc
+  direnv allow .
+  # init venv
+  source venv/bin/activate
   pip install --upgrade pip
   pip install pynvim
-}
-export -f _init_this_venv
-direnv exec . bash -c _init_this_venv
+fi
+
 
