@@ -48,6 +48,6 @@ fi
 
 # install LSP dependencies
 if [ "$LSP" == 1 ]; then
-  pip install 'python-language-server[all]'
+  pip install 'python-lsp-server[all]'
 fi
 
