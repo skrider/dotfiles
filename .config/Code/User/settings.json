@@ -49,7 +49,7 @@
   "workbench.editor.revealIfOpen": true,
   "window.menuBarVisibility": "hidden",
   "editor.lineNumbers": "on",
-  "editor.glyphMargin": false,
+  "editor.glyphMargin": true,
   "customizeUI.activityBar": "top",
   "customizeUI.activityBarHideSettings": true,
   "customizeUI.statusBarPosition": "bottom",
