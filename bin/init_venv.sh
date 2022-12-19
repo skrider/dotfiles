@@ -23,6 +23,8 @@ if [ -z "${VIRTUAL_ENV:-}" ]; then
   pyenv local $PYTHON_VERSION
   # create virtual environment
   python -m venv venv
+  # ignore it
+  echo "venv" >> .gitignore
   # add to direnv
   echo -e "export VENV_CMD=\"source $(pwd)/venv/bin/activate\"" > .envrc
   direnv allow .
