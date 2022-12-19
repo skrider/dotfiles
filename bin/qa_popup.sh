@@ -18,14 +18,14 @@ _main () {
   options="$(ls "$DIALOGUES_DIR")\n$NEW_DIALOGUE_OPTION"
   option=$(echo -e "$options" | fzf --height 40% --reverse --prompt "Select dialogue: ")
   if [[ "$option" == "$NEW_DIALOGUE_OPTION" ]]; then
-    # read in the new dialoge name
-    option=$(echo "" | fzf --height 40% --reverse --prompt "Enter dialogue name: ")
+    # read in the new dialoge name using read
+    read -p "Enter new dialogue name: " option
     touch "$DIALOGUES_DIR/$option"
   fi
   # run the dialogue
   dialogue_path="$DIALOGUES_DIR/$option"
   # run _watch_dialogue in the background and capture PID, redirecting stderr and stdout to /dev/null
-  _watch_dialogue "$dialogue_path" &>/dev/null &
+  _watch_dialogue "$dialogue_path" &>/tmp/qa_popup.log &
   dialogue_pid=$!
   # run EDITOR in the foreground
   $EDITOR "$dialogue_path"
