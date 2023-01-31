@@ -6,9 +6,12 @@ set -o nounset
 
 # parse PYTHON_VERSION from the -v argument
 PYTHON_VERSION="3.10.8"
-while getopts ":v:" opt; do
+USE_NVIM=0
+while getopts ":vn:" opt; do
   case $opt in
     v) PYTHON_VERSION="$OPTARG"
+    ;;
+    n) USE_NVIM=1
     ;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
@@ -31,7 +34,10 @@ if [ -z "${VIRTUAL_ENV:-}" ]; then
   # init venv
   source venv/bin/activate
   pip install --upgrade pip
-  pip install pynvim
+
+  if [ $USE_NVIM -eq 1 ]; then
+    pip install pynvim
+  fi
 fi
 
 
