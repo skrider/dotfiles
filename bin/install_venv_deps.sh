@@ -5,7 +5,7 @@ set -o nounset
 # set -o xtrace
 
 # if not in a venv, exit
-if [ -z "${VIRTUAL_ENV:-}" ]; then
+if [ -z "${VIRTUAL_ENV:-}" ] && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
     echo "Not in a virtualenv, exiting"
     exit 1
 fi

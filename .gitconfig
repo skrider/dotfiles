@@ -13,3 +13,5 @@
 	excludesfile = /home/sk/.gitignore_global
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[init]
+	defaultBranch = main

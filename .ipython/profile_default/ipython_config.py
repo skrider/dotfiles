@@ -558,7 +558,7 @@ c = get_config()  # noqa
 
 ## Autoformatter to reformat Terminal code. Can be `'black'`, `'yapf'` or `None`
 #  Default: None
-c.TerminalInteractiveShell.autoformatter = black
+# c.TerminalInteractiveShell.autoformatter = black
 
 ## 
 #  See also: InteractiveShell.autoindent
@@ -628,7 +628,7 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
 #  Default: 'nvim'
-# c.TerminalInteractiveShell.editor = 'nvim'
+c.TerminalInteractiveShell.editor = 'nvim'
 
 ## Add shortcuts from 'emacs' insert mode to 'vi' insert mode.
 #  Default: True
