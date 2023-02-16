@@ -17,6 +17,12 @@
     },
     "zsh": null
   },
-  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-  "editor.formatOnSave": true
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+  "editor.formatOnSave": true,
+  "github.copilot.advanced": {},
+  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": true
 }
