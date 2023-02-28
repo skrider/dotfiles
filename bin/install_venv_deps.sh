@@ -35,10 +35,7 @@ done
 
 # conditionally install jupyter dependencies
 if [ "$JUPYTER" == 1 ]; then
-  pip install jupyter ipykernel jupyter-ascending
-  jupyter nbextension    install jupyter_ascending --sys-prefix --py
-  jupyter nbextension     enable jupyter_ascending --sys-prefix --py
-  jupyter serverextension enable jupyter_ascending --sys-prefix --py
+  pip install jupyter ipykernel
 fi
 
 # conditionally install numeric dependencies

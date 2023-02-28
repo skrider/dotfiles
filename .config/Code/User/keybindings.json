@@ -663,9 +663,9 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "f2",
+    "key": "space n",
     "command": "editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && neovim.mode == 'normal'"
   },
   {
     "key": "f12",
