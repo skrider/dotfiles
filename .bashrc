@@ -32,18 +32,13 @@ eval "$(pyenv init -)"
 # virtual env auto init
 _venv_hook () {
   # if variable VENV_CMD is set and VIRTUAL_ENV is not, activate it
-  if [ -n "$VENV_CMD" ] && [ -z "$VIRTUAL_ENV" ] && [ -z "$CONDA_DEFAULT_ENV" ]; then
+  if [ -n "$VENV_CMD" ] && [ -z "$VIRTUAL_ENV" ] ; then
     eval "$VENV_CMD"
   fi
 
   # if variable VENV_CMD is not set and VIRTUAL_ENV is, deactivate it
   if [ -z "$VENV_CMD" ] && [ -n "$VIRTUAL_ENV" ]; then
     deactivate
-  fi
-
-  # if variable VENV_CMD is set and CONDA_DEFAULT_ENV is, deactivate it
-  if [ -z "$VENV_CMD" ] && [ -n "$CONDA_EXE" ] && [ -n "$CONDA_DEFAULT_ENV" ]; then
-    conda deactivate
   fi
 }
 export _venv_hook
@@ -62,6 +57,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/sk/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -75,5 +71,9 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/sk/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/sk/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
