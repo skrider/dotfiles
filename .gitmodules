@@ -1,12 +1,3 @@
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/skrider/nvim-config
 [submodule "gtypist/gtypist-workman"]
 	path = gtypist/gtypist-workman
 	url = https://github.com/cofi/gtypist-workman
-[submodule "custom-nvim-plugins/reply.vim"]
-	path = custom-nvim-plugins/reply.vim
-	url = https://github.com/skrider/reply.vim.git
-[submodule "custom-nvim-plugins/vim-snippets"]
-	path = custom-nvim-plugins/vim-snippets
-	url = https://github.com/skrider/vim-snippets.git
