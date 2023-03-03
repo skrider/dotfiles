@@ -10,6 +10,15 @@ function R(name)
     require("plenary.reload").reload_module(name)
 end
 
+-- set wrap in markdown files
+autocmd('BufEnter', {
+    group = augroup('markdown_wrap', {}),
+    pattern = '*.md',
+    callback = function()
+        vim.cmd('setlocal wrap!')
+    end,
+})
+
 autocmd('TextYankPost', {
     group = yank_group,
     pattern = '*',
