@@ -2,7 +2,6 @@ require("skrider.set")
 require("skrider.remap")
 
 local augroup = vim.api.nvim_create_augroup
-local skrider_group = augroup('skrider', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
