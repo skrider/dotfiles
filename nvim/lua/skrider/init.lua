@@ -19,6 +19,14 @@ autocmd('BufEnter', {
     end,
 })
 
+autocmd({'InsertEnter', 'InsertLeave'}, {
+    group = augroup('disable_wrap', {}),
+    pattern = '*',
+    callback = function()
+        vim.cmd('setlocal relativenumber!')
+    end,
+})
+
 autocmd('TextYankPost', {
     group = yank_group,
     pattern = '*',

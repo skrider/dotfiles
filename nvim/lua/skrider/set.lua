@@ -3,16 +3,12 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.g.vim_markdown_math = 1
-vim.g.vim_markdown_frontmatter = 1
-vim.g.tex_conceal = ""
-vim.g.vim_markdown_folding_disabled = 1
-
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = true
 
 vim.opt.smartindent = true
 
@@ -34,5 +30,5 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.guicursor = "i:ver25-iCursor"
 
