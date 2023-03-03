@@ -1,7 +1,4 @@
 {
-  // don't use our gnarly neovim config
-  "vscode-neovim.neovimClean": true,
-  // fix caps lock rebinding issue
   "keyboard.dispatch": "keyCode",
   "workbench.colorTheme": "Monokai",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
@@ -17,12 +14,22 @@
     },
     "zsh": null
   },
-  "jupyter.widgetScriptSources": [
-    "jsdelivr.com",
-    "unpkg.com"
-  ],
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
   "editor.formatOnSave": true,
-  "github.copilot.advanced": {},
   "editor.minimap.enabled": false,
-  "editor.minimap.autohide": true
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false
+  },
+  "files.associations": {
+    "*.ipynb": "python"
+  },
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/sk/dotfiles/nvim/init.vim",
+  "editor.fontSize": 13,
+  "python.formatting.provider": "black",
+  "jupyter.askForKernelRestart": false
 }
