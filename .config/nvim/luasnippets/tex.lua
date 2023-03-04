@@ -8,7 +8,6 @@ rec_ls = function()
 	})
 end
 
-
 local function column_count_from_string(descr)
 	return #(descr:gsub("[^clmrp]", ""))
 end
@@ -78,6 +77,88 @@ local function choices_from_pairlist(ji, list)
 end
 
 return {
+    parse({trig = "eb", wordTrig = true}, [[\$ $0 \$]]),
+    parse({trig = "bmat", wordTrig = true}, [[
+    \begin{bmatrix}
+    $0
+    \end{bmatrix}
+    ]]),
+    parse({trig = "cases", wordTrig = true}, [[
+    \begin{cases}
+    $0
+    \end{cases}
+    ]]),
+    parse({trig = "ema", wordTrig = true}, [[
+    $
+    \begin{align*}
+        $0
+    \end{align*}
+    $
+	]]),
+    parse({trig = "em", wordTrig = true}, [[
+	$
+    $0
+    $
+	]]),
+    parse({trig = "sqr", wordTrig = true}, [[
+	\sqrt{$1}$0
+	]]),
+    parse({trig = "e", wordTrig = true}, [[
+	\$$1\$$2
+	]]),
+    parse({trig = "zfr", wordTrig = true}, [[
+	\frac{$1}{$2} $0
+	]]),
+    parse({trig = "lrb", wordTrig = true}, [[
+	\left\{ $1 \right\} $0
+	]]),
+    parse({trig = "lrp", wordTrig = true}, [[
+	\left( $1 \right) $0
+	]]),
+    parse({trig = "lrbr", wordTrig = true}, [[
+	\left[ $1 \right] $0
+	]]),
+    parse({trig = "lra", wordTrig = true}, [[
+	\left\langle
+    $1 
+    \right\rangle $0
+	]]),
+    parse({trig = "lrs", wordTrig = true}, [[
+	\left| $1 \right| $0
+	]]),
+    parse({trig = "sumul", wordTrig = true}, [[
+	\sum_{$1}^{$2} $0
+	]]),
+    parse({trig = "suml", wordTrig = true}, [[
+	\sum_{$1} $0
+	]]),
+    parse({trig = "prdul", wordTrig = true}, [[
+	\prod_{$1}^{$2} $0
+	]]),
+    parse({trig = "prdl", wordTrig = true}, [[
+	\prod_{$1} $0
+	]]),
+    parse({trig = "zint", wordTrig = true}, [[
+	\int $1 d$2 $0
+	]]),
+    parse({trig = "zintul", wordTrig = true}, [[
+	\int_{$1}^{$2} $0 d$3
+	]]),
+    parse({trig = "zcal", wordTrig = true}, [[
+	\mathcal{$1} $0
+	]]),
+    parse({trig = "zbf", wordTrig = true}, [[
+	\mathbf{$1} $0
+	]]),
+    parse({trig = "ztt", wordTrig = true}, [[
+	\text{$1} $0
+	]]),
+    parse({trig = "zT", wordTrig = true}, [[
+	^\top $0
+	]]),
+    parse({trig = "intul", wordTrig = true}, [[
+	\int_{$1}^{$2} $0 dx
+	]]),
     s("(", {
         choices_from_pairlist(1, texpairs)
     }),
@@ -97,7 +178,6 @@ return {
 	parse({trig = "tr", wordTrig = true}, "\\item $1"),
 	parse({trig = "abs", wordTrig = true}, "\\lvert ${1:$SELECT_DEDENT} \\rvert"),
 	parse({trig = "*", wordTrig = true}, "\\cdot "),
-	parse({trig = "sum", wordTrig = true}, [[\sum^{$1}_{$2}]]),
 	parse({trig = "sum", wordTrig = true}, [[\sum^{$1}_{$2}]]),
 	parse({trig = "int", wordTrig = true}, [[\int_{${1:lower}}^{${2:upper}} $3 \\dx $4]]),
 	s("ls", {
