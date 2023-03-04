@@ -9,7 +9,9 @@
 [credential]
 	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [core]
-	editor = code --wait
+	editor = nvim
 	excludesfile = /home/sk/.gitignore_global
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[init]
+	defaultBranch = main

@@ -37,5 +37,6 @@ fi
 
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/go/bin"
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 
 . "$HOME/.cargo/env"

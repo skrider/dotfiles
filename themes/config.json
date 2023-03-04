@@ -12,14 +12,6 @@
                 "onedark": "onedark.ron"
             }
         },
-        "nvim": {
-            "destination_file": "~/.config/nvim/core/colorscheme.vim",
-            "source_dir": "~/.dotfiles/themes/nvim",
-            "theme_name_mapping": {
-                "solarized_light": "solarized-light.vim",
-                "onedark": "onedark.vim"
-            }
-        },
         "kitty": {
             "destination_file": "~/.config/kitty/kitty-theme.conf",
             "source_dir": "~/.kitty-themes/themes",

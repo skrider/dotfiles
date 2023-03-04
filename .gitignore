@@ -1,6 +1,10 @@
-nvim
+./nvim
 UltiSnips
 .config/kitty/kitty-theme.conf
 .config/wtf/gcal/credentials.json
 .config/wtf/stephenjkrider@gmail.com-gcal-auth.json
 bin/port-info-lookup.sh
+.bash_env
+.mutt/mutt_oauth2.py
+.mutt/mutt_token.token
+bin/bootstrap_tmux_env

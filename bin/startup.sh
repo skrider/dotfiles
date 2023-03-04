@@ -29,4 +29,8 @@ start_kitty () {
  	wmctrl -R $kitty_window_name
 }
 start_kitty &
+# tmux
+echo Starting tmux
+# create a new tmux session titled mutt running mutt
+bash ./bootstrap_tmux_env.sh --brain3 --mutt
 

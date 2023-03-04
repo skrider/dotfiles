@@ -8,6 +8,8 @@
 
 bind e run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _fpp #{pane_id}'"
 bind E run "sh -c '. ~/.dotfiles/bin/tmux_scripts.sh ; _urlview #{pane_id}'"
+bind c run "tmux new-window -c \"$(tmux display-message -p -F '#{pane_current_path}')\""
+bind G run "tmux popup -E 'bash ~/.dotfiles/bin/qa_popup.sh'"
 
 # -- theme ---------------------------------------------------------------------
 
@@ -108,7 +110,7 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #(time-tracker) ,"\
+tmux_conf_theme_status_right=" #(pomodoro status) , #(time-tracker) ,"\
 " #{cpu_percentage} ,#{?battery_percentage, #{battery_percentage},} , %R %d %b"\
 " | #{username}#{root} | #{hostname} "
 # #{prefix}#{mouse}#{pairing}#{synchronized} ,
