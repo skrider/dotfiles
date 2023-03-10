@@ -10,6 +10,11 @@ function R(name)
     require("plenary.reload").reload_module(name)
 end
 
+vim.cmd [[ 
+    set autoread
+    au CursorHold * checktime
+]]
+
 -- set wrap in markdown files
 autocmd('BufEnter', {
     group = augroup('markdown_wrap', {}),
