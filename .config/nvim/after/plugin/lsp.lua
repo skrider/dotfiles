@@ -32,10 +32,20 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-j>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-j>'] = cmp.mapping.confirm(),
+        ["<C-Space>"] = cmp.mapping.confirm({ select = true })
 })
-
+cmp_mappings["<CR>"] = cmp.mapping({
+    i = function(fallback)
+        if cmp.visible() and cmp.get_active_entry() then
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        else
+            fallback()
+        end
+    end,
+    s = cmp.mapping.confirm({ select = true }),
+    c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+})
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
