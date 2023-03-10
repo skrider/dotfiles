@@ -31,5 +31,6 @@
   "vscode-neovim.neovimInitVimPaths.linux": "/home/sk/dotfiles/nvim/init.vim",
   "editor.fontSize": 13,
   "python.formatting.provider": "black",
-  "jupyter.askForKernelRestart": false
+  "jupyter.askForKernelRestart": false,
+  "editor.occurrencesHighlight": false
 }
