@@ -4,12 +4,18 @@ return {
         wordTrig = false,
         snippetType = "autosnippet"
     }, [[
-    **$0**$1
+    **$1**$0
     ]]),
     parse({
         trig = "zb",
         wordTrig = false,
     }, [[
-    **$0**$1
+    **$1**$0
+    ]]),
+    parse({
+        trig = "ee",
+        wordTrig = false,
+    }, [[
+    $$1$ $0
     ]]),
 }
