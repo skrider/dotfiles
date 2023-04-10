@@ -116,7 +116,7 @@ return {
 	\frac{$1}{$2} $0
 	]]),
     parse({ trig = "lrb", wordTrig = true }, [[
-	\left\{ $1 \right\} $0
+	\left\{ $1 \right\\} $0
 	]]),
     parse({ trig = "lrp", wordTrig = true }, [[
 	\left( $1 \right) $0

@@ -77,3 +77,5 @@ if [ -f "/home/sk/mambaforge/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+export MAMBA_NO_BANNER=1
+

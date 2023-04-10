@@ -28,9 +28,10 @@
   "files.associations": {
     "*.ipynb": "python"
   },
-  "vscode-neovim.neovimInitVimPaths.linux": "/home/sk/dotfiles/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/sk/dotfiles/.vimrc",
   "editor.fontSize": 13,
   "python.formatting.provider": "black",
   "jupyter.askForKernelRestart": false,
-  "editor.occurrencesHighlight": false
+  "editor.occurrencesHighlight": false,
+  "vscode-neovim.neovimClean": true
 }
