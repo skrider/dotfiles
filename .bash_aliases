@@ -2,7 +2,10 @@
 alias xclip='xclip -selection c'
 
 # have ranger store last directory in a temporary file, then switch to this file when exited
-alias rgr='ranger --choosedir=$HOME/.rangerdirs$(basename $(tty)) ; cd $(cat $HOME/.rangerdirs$(basename $(tty)))'
+alias rgr='ranger --choosedir=$HOME/.rangerdirs/$(basename $(tty)) ; cd $(cat $HOME/.rangerdirs/$(basename $(tty)))'
+
+# same for lf
+alias lf='lf -last-dir-path $HOME/.local/share/lf/lastdir/$(basename $(tty)) ; cd $(cat $HOME/.local/share/lf/lastdir/$(basename $(tty)))'
 
 # logout of gnome
 alias glogout='gnome-session-quit'
