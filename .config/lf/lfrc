@@ -1,2 +1,17 @@
 set findlen 2
 
+cmd open ${{
+    mime_type=$(file --mime-type $f | sed s/^.*:\\s//g)
+    case "$mime_type" in
+        application/pdf)
+            zathura $f &
+            ;;
+        image/*)
+            eog $f &
+            ;;
+        *)
+            nvim $f
+            ;;
+    esac
+}}
+
