@@ -1,6 +1,9 @@
 # modify xclip to use the correct clipboard
 alias xclip='xclip -selection c'
 
+# launch qtconsole in jupyter
+alias jqt='jupyter qtconsole --JupyterWidget.include_other_output=True --existing'
+
 # have ranger store last directory in a temporary file, then switch to this file when exited
 alias rgr='ranger --choosedir=$HOME/.rangerdirs/$(basename $(tty)) ; cd $(cat $HOME/.rangerdirs/$(basename $(tty)))'
 

@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
         end
     })
 
+    use("bfredl/nvim-ipy")
+
     use({ "preservim/vim-markdown", ft = { "markdown", "pandoc", "md", "tex" } })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })

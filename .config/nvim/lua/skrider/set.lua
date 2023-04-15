@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.g.python3_host_prog = '/home/sk/mambaforge/envs/nvim/bin/python3'
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
