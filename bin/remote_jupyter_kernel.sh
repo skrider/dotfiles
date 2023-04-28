@@ -8,7 +8,7 @@ set -o pipefail
 # Set variables
 USER="krider"
 HOST="honeydew"
-ENV="182"
+ENV="automl"
 LOCAL_RUNTIME_DIR=$(jupyter --runtime-dir)
 
 _start () {

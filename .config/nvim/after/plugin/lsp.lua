@@ -21,7 +21,7 @@ lsp.configure('pyright', {
                 diagnosticMode = "workspace",
                 useLibraryCodeForTypes = true
             },
-            venvPath = vim.env.VIRTUAL_ENV or ""
+            venvPath = vim.env.VIRTUAL_ENV or vim.env.CONDA_PREFIX or ""
         }
     },
     debounce_text_changes = 200,

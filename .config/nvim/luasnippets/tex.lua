@@ -165,6 +165,9 @@ return {
     parse({ trig = "intul", wordTrig = true }, [[
 	\int_{$1}^{$2} $0 dx
 	]]),
+    parse({ trig = "intl", wordTrig = true }, [[
+	\int_{$1} $0 dx
+	]]),
     s("(", {
         choices_from_pairlist(1, texpairs)
     }),

@@ -1,6 +1,6 @@
 {
   "keyboard.dispatch": "keyCode",
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Default Light+",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
   "editor.inlineSuggest.enabled": true,
   "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
@@ -33,5 +33,6 @@
   "python.formatting.provider": "black",
   "jupyter.askForKernelRestart": false,
   "editor.occurrencesHighlight": false,
-  "vscode-neovim.neovimClean": true
+  "vscode-neovim.neovimClean": true,
+  "notebook.output.textLineLimit": 300
 }
