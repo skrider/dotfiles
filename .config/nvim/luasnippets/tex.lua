@@ -4,9 +4,7 @@ rec_ls = function()
         c(1, {
             t({ "" }),
             sn(nil, { t({ "", "\t\\item " }), i(1), d(2, rec_ls, {}) }),
-        }),
-    })
-end
+        }), }) end
 
 local function column_count_from_string(descr)
     return #(descr:gsub("[^clmrp]", ""))
@@ -101,7 +99,7 @@ return {
     $
 	]]),
     parse({ trig = "===", wordTrig = true, snippetType = "autosnippet" }, [[
-    & = $0
+     & = $0
 	]]),
     parse({ trig = "sqr", wordTrig = true }, [[
 	\sqrt{$1}$0
@@ -131,6 +129,9 @@ return {
 	]]),
     parse({ trig = "lrs", wordTrig = true }, [[
 	\left| $1 \right| $0
+	]]),
+    parse({ trig = "usub", wordTrig = true }, [[
+	\underset{$2}{\underbrace{$1}} $0
 	]]),
     parse({ trig = "sumul", wordTrig = true }, [[
 	\sum_{$1}^{$2} $0

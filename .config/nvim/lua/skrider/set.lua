@@ -34,3 +34,5 @@ vim.opt.updatetime = 50
 
 vim.opt.guicursor = "i:ver25-iCursor"
 
+vim.g.copilot_enabled = false
+

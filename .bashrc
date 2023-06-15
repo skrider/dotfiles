@@ -79,3 +79,11 @@ fi
 
 export MAMBA_NO_BANNER=1
 
+
+source /home/sk/.bash_completions/sieve.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/sk/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/sk/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/sk/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sk/Downloads/google-cloud-sdk/completion.bash.inc'; fi

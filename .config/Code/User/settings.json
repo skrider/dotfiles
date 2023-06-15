@@ -34,5 +34,12 @@
   "jupyter.askForKernelRestart": false,
   "editor.occurrencesHighlight": false,
   "vscode-neovim.neovimClean": true,
-  "notebook.output.textLineLimit": 300
+  "notebook.output.textLineLimit": 300,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": true
+  }
 }
