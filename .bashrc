@@ -27,8 +27,11 @@ _fuzzy_history() {
 
 _fuzzy_file() {
     file=$(fd | fzf)
+    if [[ "$file" =~ " " ]]; then
+        file="\"$file\""
+    fi
     if [[ ${#file} != 0 ]]; then
-        _readline_insert " $file"
+        _readline_insert "$file"
     fi
 }
 
