@@ -1,3 +1,8 @@
+alias k="kubectl"
+
+# cd into nix channel
+alias cdnix='cd /nix/var/nix/profiles/per-user/root/channels/nixpkgs'
+
 # modify xclip to use the correct clipboard
 alias xclip='xclip -selection c'
 
