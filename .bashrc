@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+_readline_insert() {
+    local insert="$1"
+    READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$insert${READLINE_LINE:$READLINE_POINT}"
+    READLINE_POINT=$(($READLINE_POINT + ${#insert}))
+}
+
 _edit_wo_executing() {
     local editor="${EDITOR:-nano}"
     tmpf="$(mktemp).sh"
@@ -10,6 +16,20 @@ _edit_wo_executing() {
     READLINE_LINE="$(tail -n +2 < "$tmpf")"
     READLINE_POINT="${#READLINE_LINE}"
     rm "$tmpf"
+}
+
+_fuzzy_history() {
+    line=$(history | cut -c 8- | sort | uniq | fzf)
+    if [[ ${#line} != 0 ]]; then
+        _readline_insert " $line"
+    fi
+}
+
+_fuzzy_file() {
+    file=$(fd | fzf)
+    if [[ ${#file} != 0 ]]; then
+        _readline_insert " $file"
+    fi
 }
 
 if [[ $- == *i* ]]; then
@@ -24,6 +44,8 @@ if [[ $- == *i* ]]; then
 '\[\e[0m\] \$'\
 '\[\e[0m\] '
 	bind -m vi-command -x '"v":_edit_wo_executing'
+	bind -m vi-command -x '"H":_fuzzy_history'
+	bind -m vi-command -x '"F":_fuzzy_file'
 fi
 
 source ~/.bash_aliases
