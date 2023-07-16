@@ -21,7 +21,7 @@ _edit_wo_executing() {
 _fuzzy_history() {
     line=$(history | cut -c 8- | sort | uniq | fzf)
     if [[ ${#line} != 0 ]]; then
-        _readline_insert " $line"
+        _readline_insert "$line"
     fi
 }
 

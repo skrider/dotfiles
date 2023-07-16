@@ -9,3 +9,4 @@ bin/port-info-lookup.sh
 .mutt/mutt_token.token
 bin/bootstrap_tmux_env
 .config/nvim/plugin/packer_compiled.lua
+bin/aws-nuke-v2.23.0-linux-amd64
