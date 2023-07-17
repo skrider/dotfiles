@@ -36,8 +36,8 @@ _fuzzy_file() {
 }
 
 _fuzzy_env() {
-    env=$(env \
-        | sed '/^PS1/d' \
+    env=$(python3 -c \
+        'import os; import sys; sys.stdout.write("".join([f"{key}={os.environ[key]}\n" for key in os.environ if key != "PS1"]))' \
         | bat --plain --force-colorization --language=sh \
         | fzf --ansi \
         | sed 's/\([^=]*\)=.*$/\1/')
