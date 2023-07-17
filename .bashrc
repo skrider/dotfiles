@@ -35,6 +35,16 @@ _fuzzy_file() {
     fi
 }
 
+_fuzzy_env() {
+    env="\$$(env \
+        | sed '/^PS1/d' \
+        | fzf \
+        | sed 's/\([^=]*\)=.*$/\1/')"
+    if [[ ${#env} != 0 ]]; then
+        _readline_insert "$file"
+    fi
+}
+
 if [[ $- == *i* ]]; then
 	source ~/.gitstatus/gitstatus.prompt.sh
     export PS1=\
