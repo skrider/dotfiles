@@ -36,12 +36,13 @@ _fuzzy_file() {
 }
 
 _fuzzy_env() {
-    env="\$$(env \
+    env=$(env \
         | sed '/^PS1/d' \
-        | fzf \
-        | sed 's/\([^=]*\)=.*$/\1/')"
+        | bat --plain --force-colorization --language=sh \
+        | fzf --ansi \
+        | sed 's/\([^=]*\)=.*$/\1/')
     if [[ ${#env} != 0 ]]; then
-        _readline_insert "$file"
+        _readline_insert "\$$env"
     fi
 }
 
@@ -59,6 +60,7 @@ if [[ $- == *i* ]]; then
 	bind -m vi-command -x '"v":_edit_wo_executing'
 	bind -m vi-command -x '"H":_fuzzy_history'
 	bind -m vi-command -x '"F":_fuzzy_file'
+	bind -m vi-command -x '"E":_fuzzy_env'
 fi
 
 source ~/.bash_aliases
