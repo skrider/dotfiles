@@ -36,8 +36,9 @@ _fuzzy_file() {
 }
 
 _fuzzy_env() {
-    env=$(python3 -c \
-        'import os; import sys; sys.stdout.write("".join([f"{key}={os.environ[key].replace("\\n", "\\\\n")}\n" for key in os.environ if key != "PS1"]))' \
+    env=$(env -0 \
+        | tr '\n' ' ' \
+        | tr '\0' '\n' \
         | bat --plain --force-colorization --language=sh \
         | fzf --ansi \
         | sed 's/\([^=]*\)=.*$/\1/')
