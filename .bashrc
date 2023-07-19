@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+HISTSIZE=1000
+HISTFILESIZE=3000
+shopt -s histappend
+export HISTCONTROL=ignoredups:erasedups
+
 _readline_insert() {
     local insert="$1"
     READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$insert${READLINE_LINE:$READLINE_POINT}"
