@@ -1,0 +1,11 @@
+plugin:
+  yank-name:
+    shortCut: Ctrl-Y
+    description: Yank name
+    scopes:
+    - all
+    command: sh
+    background: true
+    args:
+    - -c
+    - "printf ${NAME} | xclip -selection clipboard"
