@@ -9,6 +9,37 @@ plugin:
     args:
     - -c
     - "printf ${NAME} | xclip -selection clipboard"
+  swoop-node:
+    shortCut: g
+    confirm: false
+    description: swoop
+    scopes:
+    - node
+    command: sh
+    background: false
+    args:
+    - -c
+    - |
+      # 1: filename
+      # 2: line number
+      _preview () {
+          bat "$1" \
+              --plain \
+              --color=always \
+              --theme base16 \
+              --style=numbers \
+              --line-range $(python3 -c "print(max(int($2) - 15, 0))"):+500 \
+              --highlight-line "$2"
+      }
+      export -f _preview
+      
+      temp=$(mktemp)
+      kubectl get node $NAME -o yaml |
+          tee $temp |
+          nl -s':' |
+          fzf --delimiter : --with-nth 2.. --preview "_preview $temp {1}" |
+          sed -e 's/[^:]*:[^:]*:\s*//' |
+          xclip -selection clipboard -i
   swoop:
     shortCut: g
     confirm: false
@@ -34,11 +65,26 @@ plugin:
       export -f _preview
       
       temp=$(mktemp)
-      kubectl get all --namespace $NAMESPACE -o yaml \
-          | yq '.items[] | select(.metadata.name == "$NAME")' \
-          | tee $temp \
-          | nl -s':' \
-          | fzf --delimiter : --with-nth 2.. --preview "_preview $temp {1}" \
-          | sed -e 's/[^:]*:[^:]*:\s*//' \
-          | xclip -selection clipboard -i
+      kubectl get all --namespace $NAMESPACE -o yaml |
+          yq '.items[] | select(.metadata.name == "$NAME")' |
+          tee $temp |
+          nl -s':' |
+          fzf --delimiter : --with-nth 2.. --preview "_preview $temp {1}" |
+          sed -e 's/[^:]*:[^:]*:\s*//' |
+          xclip -selection clipboard -i
+  ssh-node:
+    shortCut: s
+    confirm: false
+    description: swoop
+    scopes:
+    - node
+    command: sh
+    background: false
+    args:
+    - -c
+    - |
+      ip=$(kubectl get node $NAME -o yaml |
+          yq '.status.addresses[] | select(.type == "ExternalIP") | .address')
+      ssh ec2-user@$ip
+          
 
