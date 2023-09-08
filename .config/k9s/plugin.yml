@@ -83,8 +83,59 @@ plugin:
     args:
     - -c
     - |
-      ip=$(kubectl get node $NAME -o yaml |
+      export temp=$(mktemp)
+      external_ip=$(kubectl get node $NAME -o yaml |
+          tee $temp |
           yq '.status.addresses[] | select(.type == "ExternalIP") | .address')
-      ssh ec2-user@$ip
-          
+      internal_ip=$(cat $temp | yq '.status.addresses[] | select(.type == "InternalIP") | .address')
+      os=$(cat $temp | yq '.status.nodeInfo.osImage')
+      if [[ $os =~ "Ubuntu" ]]; then
+        ssh_user=ubuntu
+      else
+        ssh_user=ec2-user
+      fi
+      echo user: $ssh_user
+      echo internal_ip: $internal_ip
+      echo external_ip: $external_ip
+      if [[ $KUBE_BASTION == "" ]]; then
+        ssh $ssh_user@$external_ip
+      else
+        ssh -J $KUBE_BASTION $ssh_user@$internal_ip
+      fi
+  # See https://k9scli.io/topics/plugins/
+  raw-logs-follow:
+    shortCut: Ctrl-L
+    description: logs -f
+    scopes:
+      - po
+    command: kubectl
+    background: false
+    args:
+      - logs
+      - -f
+      - $NAME
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+  log-less:
+    shortCut: Shift-L
+    description: "logs|less"
+    scopes:
+      - po
+    command: sh
+    background: false
+    args:
+      - -c
+      - kubectl logs $NAME -n $NAMESPACE --context $CONTEXT | less
+  log-less-container:
+    shortCut: Shift-L
+    description: "logs|less"
+    scopes:
+      - containers
+    command: sh
+    background: false
+    args:
+      - -c
+      - kubectl logs -c $NAME $POD -n $NAMESPACE --context $CONTEXT | less
 
