@@ -76,9 +76,9 @@ ls.config.setup({
 
 vim.cmd [[
 	inoremap <silent> <C-J> <cmd>lua ls.jump(1)<Cr>
-	inoremap <silent> <C-L> <cmd>lua ls.jump(-1)<Cr>
+	inoremap <silent> <C-K> <cmd>lua ls.jump(-1)<Cr>
 	snoremap <silent> <C-J> <cmd>lua ls.jump(1)<Cr>
-	snoremap <silent> <C-L> <cmd>lua ls.jump(-1)<Cr>
+	snoremap <silent> <C-K> <cmd>lua ls.jump(-1)<Cr>
 	imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : ''
 	smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : ''
 	imap <silent><expr> <C-S-E> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : ''

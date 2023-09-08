@@ -30,8 +30,8 @@ lsp.configure('pyright', {
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-h>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-l>'] = cmp.mapping.select_next_item(cmp_select),
         ["<C-Space>"] = cmp.mapping.confirm({ select = true })
 })
 cmp_mappings["<CR>"] = cmp.mapping({

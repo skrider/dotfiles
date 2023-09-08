@@ -43,9 +43,19 @@ autocmd('TextYankPost', {
     end,
 })
 
+vim.api.nvim_exec([[
+  autocmd BufRead,BufNewFile *.hcl set filetype=tf
+]], false)
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+vim.api.nvim_exec([[
+  autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
+]], false)
+
 require("skrider.packer")
+
+
 
