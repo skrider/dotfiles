@@ -1,0 +1,51 @@
+#!/bin/env bash
+
+set -o xtrace
+set -o pipefail
+
+SCHEMA_PATH=$(pwd)/.terraformschema.json
+
+if [[ ! -f "$SCHEMA_PATH" ]]; then
+    terraform providers schema -json > "$SCHEMA_PATH"
+fi
+
+_preview () {
+    local keys=("$@")
+    keys=$(echo $keys[*] | sed -e 's/^/"/')
+    IFS="."
+    local path=$(IFS="." echo "${keys[*]}" | sed 's/ROOT//')
+    IFS=$' \t\n'
+    echo jq "$path" $SCHEMA_PATH
+    jq "$path" $SCHEMA_PATH
+}
+export -f _preview
+
+_recurse () {
+    local keys=("$@")
+    IFS="."
+    local path=$(IFS="\".\"" echo "${keys[*]}" | sed 's/ROOT//')
+    IFS=$' \t\n'
+    local continue=1
+    local key=""
+    local nextkey=""
+    while [[ $continue == 1 ]]; do
+        key=\"$(jq "$path | keys | .[]" --raw-output $SCHEMA_PATH |
+            fzf --preview "SCHEMA_PATH=$SCHEMA_PATH _preview ${keys[*]} \\\"{1}\\\"")\"
+        if [[ $? == 0 ]]; then
+            nextkey=$(_recurse ${keys[*]} $key)
+            if [[ ! $nextkey == "" ]]; then
+                continue=0
+            fi
+        else
+            exit
+        fi
+    done
+}
+
+# .
+# .foo
+# .foo.bar
+# .foo.bar.baz
+
+_recurse 'ROOT' provider_schemas
+
