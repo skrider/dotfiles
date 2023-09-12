@@ -1,6 +1,6 @@
 {
   "keyboard.dispatch": "keyCode",
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Visual Studio Dark",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
   "editor.inlineSuggest.enabled": true,
   "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
@@ -41,5 +41,9 @@
     "markdown": false,
     "scminput": false,
     "python": true
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
   }
 }

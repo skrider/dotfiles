@@ -1,4 +1,14 @@
+alias lock-screen='dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock'
+
+alias t='tmux'
+
+alias firefox='nohup firefox 2>&1 > /dev/null &'
+
 alias k="kubectl"
+alias k9s="k9s --crumbsless --headless --logoless"
+alias ter="terraform"
+
+alias aws-shell='PATH="$HOME/micromamba/envs/aws-shell/bin:$PATH" $HOME/micromamba/envs/aws-shell/bin/aws-shell'
 
 # cd into nix channel
 alias cdnix='cd /nix/var/nix/profiles/per-user/root/channels/nixpkgs'
@@ -60,3 +70,4 @@ alias kspt='nohup kitty --class spt spt &> /dev/null &'
 # fische from microphone
 alias fische_mic='fische --device alsa_input.pci-0000_00_1f.3-platform-sof_sdw.HiFi__hw_sofsoundwire_4__source'
 
+alias mm="micromamba"

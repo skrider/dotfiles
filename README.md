@@ -1,6 +1,6 @@
 Dell XPS 17 9700
 
-Ubuntu 20.04
+Ubuntu 22.04
 
 Massdrop ALT, Planck EZ
 
